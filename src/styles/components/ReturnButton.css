@@ -1,0 +1,24 @@
+.return-bttn{
+    background-image: url("/images/menu_opt_background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: max-content;
+    z-index: 1000000;
+    top: -10vh;
+    left: 0;
+    transition: .3s ease-in-out;
+}
+
+.return-bttn span{
+    padding: 3rem 4rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 1rem 3rem;
+}
+
+.return-bttn:hover{
+    scale: 1.1;
+}

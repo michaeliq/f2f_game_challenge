@@ -1,0 +1,69 @@
+.init-game{
+    background: url("/images/init_game.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.init-game-container-buttons{
+    align-self: flex-end;
+    margin-bottom: 1vh;
+}
+
+.init-game-options, .init-game-option-start{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+}
+
+.init-game-option, .init-game-start-btn{
+    text-decoration: none;
+    background-image: url("/images/menu_opt_background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 600px;
+    height: auto;
+    padding: 2rem 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+@keyframes buttonInit {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(.95);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.init-game-start-btn{
+    animation-name: buttonInit;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    font-size: 2rem;
+}
+
+.init-game-option{
+    transition: .3s;
+}
+
+.init-game-option:hover{
+    transform: scale(1.12);
+}

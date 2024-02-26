@@ -1,13 +1,10 @@
 import '@/app/App.css';
-import ContainerGame from '@/components/ContainerGame';
-import PanelQuestionGame from '@/components/PanelQuestionGame';
+import InitGame from '@/components/InitGame';
 
 function App() {
   return (
     <div className="App">
-      <ContainerGame>
-        <PanelQuestionGame />
-      </ContainerGame>
+        <InitGame/>
     </div>
   );
 }
