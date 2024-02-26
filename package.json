@@ -6,16 +6,16 @@
   "scripts": {
     "build": "next build",
     "lint": "next lint",
-    "dev": "next dev -p 8080",
-    "start": "next start -p 8080"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
+    "dev": "next dev -p 4511",
+    "start": "next start -p 4511"
   },
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.1.0"
+  },
+  "dependencies": {
+    "next": "^13.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
