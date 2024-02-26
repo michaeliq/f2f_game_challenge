@@ -1,12 +1,16 @@
 "use client"
 import "@/styles/components/InitGame.css"
-import JSConfetti from 'js-confetti'
 import { useEffect, useState } from "react"
+import { changeStateGame } from "@/redux/gameReducer"
+import JSConfetti from 'js-confetti'
 import Link from "next/link"
+import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 
 const InitGame = () => {
     const [gameStart, setStateGame] = useState(false)
     const [jsConfetti, setInstanceCJ] = useState(null)
+    const game = useAppSelector((state)=> state.game)
+    const dispatch = useAppDispatch()
     
     const InitGameAction = () => {
         setStateGame(prev => {
@@ -17,12 +21,18 @@ const InitGame = () => {
                     ],
                 })
             }
+            dispatch(changeStateGame({
+                stateGame:!prev
+            }))
             return !prev
         })
     }
 
     useEffect(()=>{
         setInstanceCJ(new JSConfetti)
+        if(game.gameState){
+            setStateGame(game.gameState)
+        }
     },[])
 
     return (

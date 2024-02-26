@@ -14,7 +14,7 @@
 }
 
 .init-game-container-buttons{
-    align-self: flex-end;
+    align-self: center;
     margin-bottom: 1vh;
 }
 
@@ -25,6 +25,31 @@
     align-items: center;
     justify-content: center;
     row-gap: 1rem;
+}
+
+.init-game-options{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    left: 0;
+    bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.init-game-option-start{
+    height: 99vh;
+    justify-content: end;
+}
+
+.init-game-option:nth-child(2){
+    justify-self: end;
+}
+.init-game-option:nth-child(4){
+    justify-self: end;
+}
+.init-game-option:nth-child(6){
+    justify-self: end;
 }
 
 .init-game-option, .init-game-start-btn{
@@ -62,6 +87,7 @@
 
 .init-game-option{
     transition: .3s;
+    font-size: 2rem;
 }
 
 .init-game-option:hover{

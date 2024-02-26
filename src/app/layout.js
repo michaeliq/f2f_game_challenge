@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ContainerGame from "@/components/ContainerGame";
-
+import ContainProvider from "@/components/ContainProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,9 +12,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ContainerGame>
+        <ContainProvider>
           {children}
-        </ContainerGame>
+        </ContainProvider>
       </body>
     </html>
   );
