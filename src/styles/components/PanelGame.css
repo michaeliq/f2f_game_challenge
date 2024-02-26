@@ -1,0 +1,26 @@
+.panel-game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    width: 50vw;
+    height: 230px;
+}
+
+.module-panel {
+    width: 50vw;
+    height: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+p{
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 0 10px;
+    margin:0;
+    
+}

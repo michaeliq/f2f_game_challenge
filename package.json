@@ -2,6 +2,7 @@
   "name": "game-main",
   "version": "0.1.0",
   "private": true,
+  "engines": {},
   "scripts": {
     "dev": "next dev",
     "build": "next build",

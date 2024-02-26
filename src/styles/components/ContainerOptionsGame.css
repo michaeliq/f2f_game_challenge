@@ -1,0 +1,10 @@
+.container-options-game{
+    height: auto;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    top: 3rem;
+    row-gap: 1rem;
+}

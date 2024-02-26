@@ -1,0 +1,26 @@
+.question-game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50vw;
+    height: 50px;
+    top:-1vh;
+}
+
+.module-question {
+    width: 50vw;
+    height: 50px;
+    position: relative;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+}
+
+p{
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 0 10px;
+    margin:0;
+}

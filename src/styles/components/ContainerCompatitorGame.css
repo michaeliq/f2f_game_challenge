@@ -1,0 +1,10 @@
+.container-compatitor-game {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: .7rem;
+    position: relative;
+    width: 90vw;
+    height: auto;
+    top: 8rem;
+}

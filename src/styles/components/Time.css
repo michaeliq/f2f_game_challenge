@@ -1,0 +1,24 @@
+.time-box{
+    position: absolute;
+    width: 20vw;
+    height: 70px;
+    right: 13vw;
+    top: 16vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.time-module{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.time-box > p{
+    margin-right: 3rem;
+    font-size: 2.5rem;
+}

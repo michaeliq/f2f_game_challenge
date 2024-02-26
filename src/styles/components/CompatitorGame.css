@@ -1,0 +1,34 @@
+.compatitor-box{
+    position: relative;
+    width: 30vw;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compatitor-box.left{
+    justify-self: flex-start;
+}
+
+.compatitor-box.right{
+    justify-self: flex-end;
+}
+
+.module-compatitor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30vw;
+    height: 80px;
+}
+
+.module-compatitor.group-a {
+    position: absolute;
+    z-index: -1;
+}
+
+.module-compatitor.group-b {
+    position: absolute;
+    z-index: -1;
+}
