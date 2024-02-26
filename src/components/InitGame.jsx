@@ -1,12 +1,13 @@
 "use client"
 import "@/styles/components/InitGame.css"
 import JSConfetti from 'js-confetti'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 
 const InitGame = () => {
     const [gameStart, setStateGame] = useState(false)
-    const jsConfetti = new JSConfetti()
+    const [jsConfetti, setInstanceCJ] = useState(null)
+    
     const InitGameAction = () => {
         setStateGame(prev => {
             if (!prev) {
@@ -19,6 +20,10 @@ const InitGame = () => {
             return !prev
         })
     }
+
+    useEffect(()=>{
+        setInstanceCJ(new JSConfetti)
+    },[])
 
     return (
         <div className="init-game">
