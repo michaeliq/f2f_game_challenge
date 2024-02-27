@@ -22,3 +22,12 @@
     margin-right: 3rem;
     font-size: 2.5rem;
 }
+
+.time-pause{
+    position: absolute;
+    right: 0;
+    bottom:-3rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
