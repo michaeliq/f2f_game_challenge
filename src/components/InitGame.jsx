@@ -37,6 +37,7 @@ const InitGame = () => {
 
     return (
         <div className="init-game">
+            <img src="/images/game_background_init.png" alt="Logo de juego" className="init-game-logo"/>
             <div className="init-game-container-buttons">
                 {gameStart ?
                     <ul className="init-game-options">

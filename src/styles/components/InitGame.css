@@ -1,5 +1,5 @@
 .init-game{
-    background: url("/images/init_game.png");
+    background: url("/images/background_image.png");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,6 +11,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.init-game-logo{
+    position: absolute;
+    margin: 0 auto;
+    scale: .7;
+    top:-15vh;
 }
 
 .init-game-container-buttons{
