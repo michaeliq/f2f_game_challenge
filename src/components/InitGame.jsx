@@ -1,7 +1,7 @@
 "use client"
 import "@/styles/components/InitGame.css"
 import { useEffect, useState } from "react"
-import { changeStateGame } from "@/redux/gameReducer"
+import { changeStateGame, resetValues } from "@/redux/gameReducer"
 import JSConfetti from 'js-confetti'
 import Link from "next/link"
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
@@ -9,9 +9,9 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 const InitGame = () => {
     const [gameStart, setStateGame] = useState(false)
     const [jsConfetti, setInstanceCJ] = useState(null)
-    const game = useAppSelector((state)=> state.game)
+    const game = useAppSelector((state) => state.game)
     const dispatch = useAppDispatch()
-    
+
     const InitGameAction = () => {
         setStateGame(prev => {
             if (!prev) {
@@ -20,24 +20,27 @@ const InitGame = () => {
                         '🥮', '🟡'
                     ],
                 })
+                dispatch(changeStateGame({
+                    stateGame: !prev
+                }))
+            } else {
+                dispatch(resetValues())
             }
-            dispatch(changeStateGame({
-                stateGame:!prev
-            }))
+
             return !prev
         })
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         setInstanceCJ(new JSConfetti)
-        if(game.gameState){
+        if (game.gameState) {
             setStateGame(game.gameState)
         }
-    },[])
+    }, [])
 
     return (
         <div className="init-game">
-            <img src="/images/game_background_init.png" alt="Logo de juego" className="init-game-logo"/>
+            <img src="/images/game_background_init.png" alt="Logo de juego" className="init-game-logo" />
             <div className="init-game-container-buttons">
                 {gameStart ?
                     <ul className="init-game-options">

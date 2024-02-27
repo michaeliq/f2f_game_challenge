@@ -6,6 +6,7 @@
     flex-direction: column;
     width: 50vw;
     height: 230px;
+    margin-bottom: 2rem;
 }
 
 .module-panel {

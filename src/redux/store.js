@@ -1,9 +1,11 @@
 "use client"
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import gameReducer from "./gameReducer"
+import questionReducer from "./questionReducer";
 
 const rootReducer = combineReducers({
-    game:gameReducer
+    game:gameReducer,
+    question:questionReducer
 })
 
 export const store = configureStore({

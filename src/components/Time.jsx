@@ -9,6 +9,7 @@ const Time = () => {
     const dispatch = useAppDispatch()
     const [gamePaused, setPausedState] = useState(false)
     const [interval, setStatusInterval] = useState(undefined)
+    const [turnGame, setTurnGame] = useState(0)
     const [time, setTime] = useState(30)
 
     const changePausedState = () => {
@@ -25,6 +26,13 @@ const Time = () => {
             setTime(game.time)
         }
     }, [])
+
+    useEffect(()=>{
+        if(!game.paused){
+            setTime(30)
+            dispatch(updateTime({time:30}))
+        }
+    },[game.turn])
 
     useEffect(() => {
         let intervalI

@@ -7,9 +7,10 @@ const initialState = {
     round:0,
     points:0,
     time:0,
-    turn:undefined,
+    turn:1,
     category:"",
-    paused:false
+    paused:false,
+    questionNumber:1
 }
 
 export const gameSlice = createSlice({
@@ -28,8 +29,24 @@ export const gameSlice = createSlice({
             const time = action.payload.time
             state.time = time
         },
+        updateQuestionN:(state)=>{
+            state.questionNumber += 1
+        },
+        updateTurn:(state)=>{
+            state.turn += 1
+        },
+        resetValues:(state)=>{
+            state.gameState= false,
+            state.round=0,
+            state.points=0,
+            state.time=0,
+            state.turn=1,
+            state.category="",
+            state.paused=false,
+            state.questionNumber=1
+        }
     }
 })
 
-export const { changeStateGame, changePausedStateGame, updateTime } = gameSlice.actions
+export const { changeStateGame, changePausedStateGame, updateTime, updateQuestionN, updateTurn, resetValues } = gameSlice.actions
 export default gameSlice.reducer
