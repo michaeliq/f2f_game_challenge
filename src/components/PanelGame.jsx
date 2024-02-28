@@ -12,22 +12,22 @@ import { resetValues } from "@/redux/gameReducer"
 const formatQuestion = (q) => {
     const count_words = q.split(" ")
     const count_chars = q.length
-    if(count_chars > 50){
-        const charIndex50 = q[50]
-        if(charIndex50 !== " "){
-            let paragraph = ["",]
-            for(let i = 0; i < count_words.length; i++){
-                const next_value = paragraph[paragraph.length -1] + count_words[i] + " "
-                if(next_value.length < 50){
-                    paragraph[paragraph.length -1] = next_value
-                }else{
-                    paragraph.push("")
-                    paragraph[paragraph.length -1] = count_words[i] + " "
-                }
+    if (count_chars > 50) {
+        let paragraph = ["",]
+        for (let i = 0; i < count_words.length; i++) {
+            const next_value = paragraph[paragraph.length - 1] + count_words[i] + " "
+            if (next_value.length < 50) {
+                console.log(paragraph)
+                paragraph[paragraph.length - 1] = next_value
+            } else {
+                console.log(paragraph)
+                paragraph.push("")
+                paragraph[paragraph.length - 1] = count_words[i] + " "
             }
-            return paragraph
         }
-    }else{
+        console.log(paragraph)
+        return paragraph
+    } else {
         return [q]
     }
 }
@@ -36,38 +36,38 @@ const formatQuestion = (q) => {
 
 const PanelGame = () => {
 
-    const [questionBody,setQuestionBody] = useState([])
-    const game = useAppSelector((state)=>state.game)
-    const user = useAppSelector((state)=>state.user)
+    const [questionBody, setQuestionBody] = useState([])
+    const game = useAppSelector((state) => state.game)
+    const user = useAppSelector((state) => state.user)
     const [roundGame, setRoundGame] = useState(0)
     const dispatch = useAppDispatch()
     const router = useRouter()
 
-    
+
 
     const getNextQuestion = async () => {
         try {
-            const question = await fetch("/game/question?id="+ game?.questionNumber,{
-                method:"GET",
-                headers:{
-                    "Content-Type":"application/json"
+            const question = await fetch("/game/question?id=" + game?.questionNumber, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
                 }
             })
 
             const raw = await question.json()
 
-            if(raw.error){
+            if (raw.error) {
                 let winner
-                if(user.groupA.points > user.groupB.points){
+                if (user.groupA.points > user.groupB.points) {
                     winner = "Grupo A"
-                }else{
+                } else {
                     winner = "Grupo B"
                 }
                 Swal.fire({
-                    title:"El juego ha terminado",
-                    text:"El ganador es " + winner,
-                    icon:"success"
-                }).then(()=>{
+                    title: "El juego ha terminado",
+                    text: "El ganador es " + winner,
+                    icon: "success"
+                }).then(() => {
                     dispatch(resetUserValues())
                     dispatch(resetQuestion())
                     dispatch(resetValues())
@@ -81,35 +81,35 @@ const PanelGame = () => {
             setQuestionBody(text)
 
             dispatch(changeDataQuestion({
-                answer:raw.answer,
-                questionBody:raw.question_body,
-                options:raw.options.split(",").sort()
+                answer: raw.answer,
+                questionBody: raw.question_body,
+                options: raw.options.split(",").sort()
             }))
 
             setRoundGame(game.round)
-            
+
         } catch (error) {
             console.error(error)
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getNextQuestion()
-    },[])
+    }, [])
 
-    useEffect(()=>{
-        if(game.round !== roundGame){
+    useEffect(() => {
+        if (game.round !== roundGame) {
             getNextQuestion()
         }
-    },[game.round])
+    }, [game.round])
 
-    return(
+    return (
         <div className="panel-game">
-            <img src={"/images/modulo_panel.png"} className="module-panel" alt="Imagen del Panel"/>
-            {questionBody?.map((textItem,key) =>(
+            <img src={"/images/modulo_panel.png"} className="module-panel" alt="Imagen del Panel" />
+            {questionBody?.map((textItem, key) => (
                 <p key={key}>{textItem}</p>
             ))}
-            <QuestionGame/>
+            <QuestionGame />
         </div>
     )
 }

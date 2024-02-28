@@ -8,6 +8,29 @@ import Swal from "sweetalert2"
 import { updateQuestionN, updateRound, updateTime, updateTurn } from "@/redux/gameReducer"
 import { incrementPoints } from "@/redux/userReducer"
 
+const formatQuestion = (q) => {
+    const count_words = q.split(" ")
+    const count_chars = q.length
+    if (count_chars > 50) {
+        let paragraph = ["",]
+        for (let i = 0; i < count_words.length; i++) {
+            const next_value = paragraph[paragraph.length - 1] + count_words[i] + " "
+            if (next_value.length < 50) {
+                console.log(paragraph)
+                paragraph[paragraph.length - 1] = next_value
+            } else {
+                console.log(paragraph)
+                paragraph.push("")
+                paragraph[paragraph.length - 1] = count_words[i] + " "
+            }
+        }
+        console.log(paragraph)
+        return paragraph
+    } else {
+        return [q]
+    }
+}
+
 const ContainerOptionsGame = () => {
     const question = useAppSelector((state) => state.question)
     const game = useAppSelector((state) => state.game)
@@ -96,7 +119,9 @@ const ContainerOptionsGame = () => {
         <div className="container-options-game">
             {options.length > 0 && optionsGameItem.map((option, key) => (
                 <OptionGame verifyAnswer={verifyAnswer} text={options[key]} key={key} src={option.src} classN={option.classN} altText={option.altText}>
-                    <p>{options[key]}</p>
+                    {formatQuestion(options[key]).map(text => (
+                        <p>{text}</p>
+                    ))}
                 </OptionGame>
             ))}
         </div>
