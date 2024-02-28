@@ -5,6 +5,8 @@ import { changeStateGame, resetValues } from "@/redux/gameReducer"
 import JSConfetti from 'js-confetti'
 import Link from "next/link"
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
+import { resetQuestion } from "@/redux/questionReducer"
+import { resetUserValues } from "@/redux/userReducer"
 
 const InitGame = () => {
     const [gameStart, setStateGame] = useState(false)
@@ -25,6 +27,8 @@ const InitGame = () => {
                 }))
             } else {
                 dispatch(resetValues())
+                dispatch(resetQuestion())
+                dispatch(resetUserValues())
             }
 
             return !prev

@@ -7,7 +7,7 @@ const initialState = {
     round:0,
     points:0,
     time:0,
-    turn:1,
+    turn:"A",
     category:"",
     paused:false,
     questionNumber:1
@@ -32,15 +32,23 @@ export const gameSlice = createSlice({
         updateQuestionN:(state)=>{
             state.questionNumber += 1
         },
+        updateRound:(state)=>{
+            state.round += 1
+            state.turn = "A"
+        },
         updateTurn:(state)=>{
-            state.turn += 1
+            if(state.turn === "A"){
+                state.turn = "B"
+            }else{
+                state.turn = "A"
+            }
         },
         resetValues:(state)=>{
             state.gameState= false,
             state.round=0,
             state.points=0,
             state.time=0,
-            state.turn=1,
+            state.turn="A",
             state.category="",
             state.paused=false,
             state.questionNumber=1
@@ -48,5 +56,5 @@ export const gameSlice = createSlice({
     }
 })
 
-export const { changeStateGame, changePausedStateGame, updateTime, updateQuestionN, updateTurn, resetValues } = gameSlice.actions
+export const { changeStateGame, changePausedStateGame, updateTime, updateQuestionN, updateTurn, updateRound, resetValues } = gameSlice.actions
 export default gameSlice.reducer

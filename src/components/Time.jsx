@@ -1,7 +1,7 @@
 "use client"
 import "@/styles/components/Time.css"
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
-import { updateTime, changePausedStateGame } from "@/redux/gameReducer"
+import { updateTime, changePausedStateGame, updateRound, updateTurn, updateQuestionN } from "@/redux/gameReducer"
 import { useEffect, useState } from "react"
 
 const Time = () => {
@@ -32,7 +32,7 @@ const Time = () => {
             setTime(30)
             dispatch(updateTime({time:30}))
         }
-    },[game.turn])
+    },[game.turn,game.round])
 
     useEffect(() => {
         let intervalI
@@ -45,6 +45,12 @@ const Time = () => {
         }
         if (time <= 0) {
             clearInterval(intervalI)
+            if(game.turn === "A"){
+                dispatch(updateTurn())
+            }else{
+                dispatch(updateRound())
+                dispatch(updateQuestionN())
+            }
         }
         return () => clearInterval(intervalI)
     }, [time, gamePaused])

@@ -5,7 +5,8 @@ import { useAppSelector, useAppDispatch } from "@/redux/hooks"
 import { useEffect, useState } from "react"
 import JSConfetti from 'js-confetti'
 import Swal from "sweetalert2"
-import { updateQuestionN, updateTime, updateTurn } from "@/redux/gameReducer"
+import { updateQuestionN, updateRound, updateTime, updateTurn } from "@/redux/gameReducer"
+import { incrementPoints } from "@/redux/userReducer"
 
 const ContainerOptionsGame = () => {
     const question = useAppSelector((state) => state.question)
@@ -34,6 +35,17 @@ const ContainerOptionsGame = () => {
         }
         if (option_selected === question.answer) {
             celebration()
+            if(game.turn === "A"){
+                dispatch(incrementPoints({
+                    points:10,
+                    group:"A"
+                }))
+            }else{
+                dispatch(incrementPoints({
+                    points:10,
+                    group:"B"
+                }))
+            }
         } else {
             incorrectAnswer()
         }
@@ -52,7 +64,7 @@ const ContainerOptionsGame = () => {
             backdrop:false
         }).then(()=>{
             dispatch(updateQuestionN())
-            dispatch(updateTurn())
+            dispatch(updateRound())
         })
     }
 
@@ -67,6 +79,11 @@ const ContainerOptionsGame = () => {
                 '😭', '😢'
             ],
         })
+        dispatch(updateTurn())
+        if(game.turn === "B"){
+            dispatch(updateQuestionN())
+            dispatch(updateRound())
+        }
     }
 
     useEffect(() => {

@@ -12,6 +12,12 @@ export async function GET(res) {
         } else {
             question = await db.get("SELECT * FROM questions")
         }
+        if(!question){
+            return NextResponse.json({
+                error:"No hay más preguntas",
+                status:false
+            })
+        }
         return NextResponse.json(question)
     } catch (error) {
         console.error(error)

@@ -2,8 +2,12 @@
 import "@/styles/components/PanelGame.css"
 import QuestionGame from "./QuestionGame"
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
-import { changeDataQuestion } from "@/redux/questionReducer"
+import { changeDataQuestion, resetQuestion } from "@/redux/questionReducer"
+import Swal from "sweetalert2"
+import { resetUserValues } from "@/redux/userReducer"
+import { resetValues } from "@/redux/gameReducer"
 
 const formatQuestion = (q) => {
     const count_words = q.split(" ")
@@ -34,8 +38,10 @@ const PanelGame = () => {
 
     const [questionBody,setQuestionBody] = useState([])
     const game = useAppSelector((state)=>state.game)
-    const [turnGame, setTurnGame] = useState(0)
+    const user = useAppSelector((state)=>state.user)
+    const [roundGame, setRoundGame] = useState(0)
     const dispatch = useAppDispatch()
+    const router = useRouter()
 
     
 
@@ -47,7 +53,30 @@ const PanelGame = () => {
                     "Content-Type":"application/json"
                 }
             })
+
             const raw = await question.json()
+
+            if(raw.error){
+                let winner
+                if(user.groupA.points > user.groupB.points){
+                    winner = "Grupo A"
+                }else{
+                    winner = "Grupo B"
+                }
+                Swal.fire({
+                    title:"El juego ha terminado",
+                    text:"El ganador es " + winner,
+                    icon:"success"
+                }).then(()=>{
+                    dispatch(resetUserValues())
+                    dispatch(resetQuestion())
+                    dispatch(resetValues())
+                    router.push("/")
+                })
+
+                return
+            }
+
             const text = formatQuestion(raw.question_body)
             setQuestionBody(text)
 
@@ -57,7 +86,7 @@ const PanelGame = () => {
                 options:raw.options.split(",").sort()
             }))
 
-            setTurnGame(game.turn)
+            setRoundGame(game.round)
             
         } catch (error) {
             console.error(error)
@@ -69,10 +98,10 @@ const PanelGame = () => {
     },[])
 
     useEffect(()=>{
-        if(game.turn !== turnGame){
+        if(game.round !== roundGame){
             getNextQuestion()
         }
-    },[game])
+    },[game.round])
 
     return(
         <div className="panel-game">

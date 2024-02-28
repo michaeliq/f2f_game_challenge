@@ -17,9 +17,14 @@ export const questionSlice = createSlice({
             state.answer = answer
             state.options = options
             state.questionBody = questionBody
+        },
+        resetQuestion: (state) =>{
+            state.questionBody=[]
+            state.options=[]
+            state.answer=""
         }
     }
 })
 
-export const { changeDataQuestion } = questionSlice.actions
+export const { changeDataQuestion, resetQuestion } = questionSlice.actions
 export default questionSlice.reducer
