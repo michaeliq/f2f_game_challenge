@@ -119,8 +119,8 @@ const ContainerOptionsGame = () => {
         <div className="container-options-game">
             {options.length > 0 && optionsGameItem.map((option, key) => (
                 <OptionGame verifyAnswer={verifyAnswer} text={options[key]} key={key} src={option.src} classN={option.classN} altText={option.altText}>
-                    {formatQuestion(options[key]).map(text => (
-                        <p>{text}</p>
+                    {formatQuestion(options[key]).map((text,key_p) => (
+                        <p key={key_p}>{text}</p>
                     ))}
                 </OptionGame>
             ))}
