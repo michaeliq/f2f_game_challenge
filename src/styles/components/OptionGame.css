@@ -3,9 +3,10 @@
     height: 56px;
     position: relative;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     cursor: pointer;
+    flex-direction: column;
 }
 
 .module-option.a{
