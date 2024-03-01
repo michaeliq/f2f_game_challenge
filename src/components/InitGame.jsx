@@ -19,7 +19,7 @@ const InitGame = () => {
             if (!prev) {
                 jsConfetti.addConfetti({
                     emojis: [
-                        '🥮', '🟡'
+                        '💰', '🟡'
                     ],
                 })
                 dispatch(changeStateGame({
