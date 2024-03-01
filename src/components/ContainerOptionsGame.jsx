@@ -5,7 +5,7 @@ import { useAppSelector, useAppDispatch } from "@/redux/hooks"
 import { useEffect, useState } from "react"
 import JSConfetti from 'js-confetti'
 import Swal from "sweetalert2"
-import { updateQuestionN, updateRound, updateTime, updateTurn } from "@/redux/gameReducer"
+import { nextTurn, updateQuestionN, updateRound, updateTime, updateTurn } from "@/redux/gameReducer"
 import { incrementPoints } from "@/redux/userReducer"
 
 const formatQuestion = (q) => {
@@ -47,26 +47,26 @@ const ContainerOptionsGame = () => {
 
     const verifyAnswer = (text) => {
         const option_selected = text
-        if(game.paused){
+        if (game.paused) {
             Swal.fire({
-                title:"Advertencia",
-                text:"No puedes responder preguntas mientras estés en una pausa",
-                icon:"warning"
+                title: "Advertencia",
+                text: "No puedes responder preguntas mientras estés en una pausa",
+                icon: "warning"
             })
 
             return
         }
         if (option_selected === question.answer) {
             celebration()
-            if(game.turn === "A"){
+            if (game.turn === "A") {
                 dispatch(incrementPoints({
-                    points:10,
-                    group:"A"
+                    points: 10,
+                    group: "A"
                 }))
-            }else{
+            } else {
                 dispatch(incrementPoints({
-                    points:10,
-                    group:"B"
+                    points: 10,
+                    group: "B"
                 }))
             }
         } else {
@@ -77,36 +77,41 @@ const ContainerOptionsGame = () => {
     const celebration = () => {
         jsConfetti.addConfetti({
             emojis: [
-                '🥮', '🟡'
+                '🟡', '💰'
             ],
         })
 
         Swal.fire({
-            title:"Respuesta correcta",
-            icon:"success",
-            backdrop:false
-        }).then(()=>{
+            title: "Respuesta correcta",
+            icon: "success",
+            backdrop: false
+        }).then(() => {
             dispatch(updateQuestionN())
             dispatch(updateRound())
         })
     }
 
     const incorrectAnswer = () => {
-        Swal.fire({
-            title:"Respuesta incorrecta",
-            icon:"error",
-            backdrop:false
-        })
         jsConfetti.addConfetti({
             emojis: [
                 '😭', '😢'
             ],
         })
-        dispatch(updateTurn())
-        if(game.turn === "B"){
-            dispatch(updateQuestionN())
-            dispatch(updateRound())
-        }
+        Swal.fire({
+            title: "Respuesta incorrecta",
+            icon: "error",
+            backdrop: false
+        }).then(() => {
+            dispatch(updateTurn())
+            if (game.countTurn === 2) {
+                dispatch(updateQuestionN())
+                dispatch(updateRound())
+            } else {
+                dispatch(nextTurn())
+            }
+        })
+
+
     }
 
     useEffect(() => {
@@ -119,7 +124,7 @@ const ContainerOptionsGame = () => {
         <div className="container-options-game">
             {options.length > 0 && optionsGameItem.map((option, key) => (
                 <OptionGame verifyAnswer={verifyAnswer} text={options[key]} key={key} src={option.src} classN={option.classN} altText={option.altText}>
-                    {formatQuestion(options[key]).map((text,key_p) => (
+                    {formatQuestion(options[key]).map((text, key_p) => (
                         <p key={key_p}>{text}</p>
                     ))}
                 </OptionGame>

@@ -4,13 +4,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     gameState: false,
-    round:0,
-    points:0,
-    time:0,
-    turn:"A",
-    category:"",
-    paused:false,
-    questionNumber:1
+    round: 0,
+    points: 0,
+    time: 0,
+    turn: "",
+    category: "",
+    paused: true,
+    questionNumber: 1,
+    countTurn: 1,
+    gameFinished: false,
 }
 
 export const gameSlice = createSlice({
@@ -25,36 +27,50 @@ export const gameSlice = createSlice({
             const pausedState = action.payload.paused
             state.paused = pausedState
         },
-        updateTime:(state,action)=>{
+        updateTime: (state, action) => {
             const time = action.payload.time
             state.time = time
         },
-        updateQuestionN:(state)=>{
+        updateQuestionN: (state) => {
             state.questionNumber += 1
         },
-        updateRound:(state)=>{
+        updateRound: (state) => {
+            if (state.questionNumber > 9) {
+                state.gameFinished = true
+            }
+            state.countTurn = 1
             state.round += 1
-            state.turn = "A"
         },
-        updateTurn:(state)=>{
-            if(state.turn === "A"){
+        nextTurn: (state) => {
+            if (state.countTurn < 2) {
+                state.countTurn += 1
+            }
+        },
+        selectTeam: (state, action) => {
+            state.turn = action.payload
+            state.paused = false
+        },
+        updateTurn: (state) => {
+            if (state.turn === "A") {
                 state.turn = "B"
-            }else{
+            } else {
                 state.turn = "A"
             }
         },
-        resetValues:(state)=>{
-            state.gameState= false,
-            state.round=0,
-            state.points=0,
-            state.time=0,
-            state.turn="A",
-            state.category="",
-            state.paused=false,
-            state.questionNumber=1
+        resetValues: (state) => {
+            state.gameState = false,
+                state.round = 0,
+                state.points = 0,
+                state.time = 0,
+                state.turn = "",
+                state.category = "",
+                state.paused = false,
+                state.questionNumber = 1,
+                state.countTurn = 1,
+                state.gameFinished = false
         }
     }
 })
 
-export const { changeStateGame, changePausedStateGame, updateTime, updateQuestionN, updateTurn, updateRound, resetValues } = gameSlice.actions
+export const { changeStateGame, selectTeam, changePausedStateGame, updateTime, updateQuestionN, updateTurn, updateRound, resetValues, nextTurn } = gameSlice.actions
 export default gameSlice.reducer

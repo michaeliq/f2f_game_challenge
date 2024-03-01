@@ -56,7 +56,7 @@ const PanelGame = () => {
 
             const raw = await question.json()
 
-            if (raw.error) {
+            if (game.gameFinished) {
                 let winner
                 if (user.groupA.points > user.groupB.points) {
                     winner = "Grupo A"

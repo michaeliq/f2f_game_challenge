@@ -1,0 +1,52 @@
+.select_team_game_container{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.module-team-a{
+    align-self: self-start;
+    position: relative;
+    left: -20vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.module-team-b{
+    align-self: self-end;
+    position: relative;
+    right: -20vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.select_team_game.image{
+
+}
+
+.module-team-a p.team-a{
+    position: absolute;
+    color: #fff ;
+    right: 20vw;
+    font-size: 5rem;
+}
+
+.module-team-b p.team-b{
+    position: absolute;
+    color: #fff ;
+    left: 20vw;
+    font-size: 5rem;
+}
+
+.module-team-a:hover, .module-team-b:hover{
+    scale: 1.12;
+}

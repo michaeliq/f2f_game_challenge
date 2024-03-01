@@ -9,7 +9,6 @@ const Time = () => {
     const dispatch = useAppDispatch()
     const [gamePaused, setPausedState] = useState(false)
     const [interval, setStatusInterval] = useState(undefined)
-    const [turnGame, setTurnGame] = useState(0)
     const [time, setTime] = useState(30)
 
     const changePausedState = () => {
@@ -45,7 +44,7 @@ const Time = () => {
         }
         if (time <= 0) {
             clearInterval(intervalI)
-            if(game.turn === "A"){
+            if(game.countTurn === 2){
                 dispatch(updateTurn())
             }else{
                 dispatch(updateRound())
