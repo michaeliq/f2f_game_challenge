@@ -8,34 +8,28 @@ const verifyQuery = (query) => {
 }
 
 export async function GET(res) {
-    try {
-        const db = await openDB()
-        const { searchParams } = new URL(res.url)
-        const category = searchParams.get('category')
-        const group = searchParams.get('group')
-        let query = "SELECT * FROM users"
+    const db = await openDB()
+    const { searchParams } = new URL(res.url)
+    const category = searchParams.get('category')
+    const group = searchParams.get('group')
+    let query = "SELECT * FROM users"
 
-        if (category) {
-            if (verifyQuery(query)) {
-                query += ` WHERE category="${category}"`
-            } else {
-                query += ` AND category="${category}"`
-            }
+    if (category) {
+        if (verifyQuery(query)) {
+            query += ` WHERE category="${category}"`
+        } else {
+            query += ` AND category="${category}"`
         }
-        if (group) {
-            if (verifyQuery(query)) {
-                query += ` WHERE group="${group}"`
-            } else {
-                query += ` AND group="${group}"`
-            }
-        }
-        let users 
-        users = await db.all(query)
-        await db.close()
-        return NextResponse.json(users)
-
-    } catch (error) {
-        console.error(error)
-        return NextResponse.error()
     }
+    if (group) {
+        if (verifyQuery(query)) {
+            query += ` WHERE group="${group}"`
+        } else {
+            query += ` AND group="${group}"`
+        }
+    }
+    let users
+    users = await db.all(query)
+    await db.close()
+    return NextResponse.json(users)
 }
