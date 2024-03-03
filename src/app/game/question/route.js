@@ -5,11 +5,14 @@ export async function GET(res) {
     const db = await openDB()
     const { searchParams } = new URL(res.url)
     const id = searchParams.get('id')
+    const category = searchParams.get('category')
     let question
     if (id) {
-        question = await db.get("SELECT * FROM questions WHERE id=?;", id)
-    } else {
-        question = await db.get("SELECT * FROM questions")
+        question = await db.get("SELECT * FROM questions WHERE id=? or category=?;", id)
+    } else if(category) {
+        question = await db.all("SELECT * FROM questions WHERE category=?",category)
+    }else{
+        question = await db.all("SELECT * FROM questions")
     }
     if (!question) {
         return NextResponse.json({
@@ -17,5 +20,6 @@ export async function GET(res) {
             status: false
         })
     }
+    await db.close()
     return NextResponse.json(question)
 }

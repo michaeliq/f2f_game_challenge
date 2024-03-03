@@ -35,6 +35,8 @@ export async function createTables() {
     movil INTEGER ,
     email TEXT,
     city TEXT,
+    gener TEXT,
+    partner TEXT,
     category TEXT,
     groups INTEGER
         );

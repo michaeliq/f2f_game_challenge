@@ -13,6 +13,7 @@ const initialState = {
     questionNumber: 1,
     countTurn: 1,
     gameFinished: false,
+    questionIdsByGame:[]
 }
 
 export const gameSlice = createSlice({
@@ -57,6 +58,12 @@ export const gameSlice = createSlice({
                 state.turn = "A"
             }
         },
+        updateCategoryByGame: (state,action)=>{
+            const category = action.payload
+        },
+        updateQuestionsByGame:(state,action)=>{
+            state.questionIdsByGame = action.payload
+        },
         resetValues: (state) => {
             state.gameState = false,
                 state.round = 0,
@@ -67,10 +74,11 @@ export const gameSlice = createSlice({
                 state.paused = false,
                 state.questionNumber = 1,
                 state.countTurn = 1,
-                state.gameFinished = false
+                state.gameFinished = false,
+                state.questionIdsByGame = []
         }
     }
 })
 
-export const { changeStateGame, selectTeam, changePausedStateGame, updateTime, updateQuestionN, updateTurn, updateRound, resetValues, nextTurn } = gameSlice.actions
+export const { changeStateGame, updateCategoryByGame, selectTeam, changePausedStateGame, updateTime, updateQuestionN, updateTurn, updateRound, resetValues, nextTurn, updateQuestionsByGame } = gameSlice.actions
 export default gameSlice.reducer

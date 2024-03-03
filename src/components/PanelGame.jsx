@@ -10,6 +10,7 @@ import { resetUserValues } from "@/redux/userReducer"
 import { resetValues } from "@/redux/gameReducer"
 
 const formatQuestion = (q) => {
+    if(!q) return
     const count_words = q.split(" ")
     const count_chars = q.length
     if (count_chars > 50) {
@@ -17,15 +18,12 @@ const formatQuestion = (q) => {
         for (let i = 0; i < count_words.length; i++) {
             const next_value = paragraph[paragraph.length - 1] + count_words[i] + " "
             if (next_value.length < 50) {
-                console.log(paragraph)
                 paragraph[paragraph.length - 1] = next_value
             } else {
-                console.log(paragraph)
                 paragraph.push("")
                 paragraph[paragraph.length - 1] = count_words[i] + " "
             }
         }
-        console.log(paragraph)
         return paragraph
     } else {
         return [q]
@@ -47,7 +45,8 @@ const PanelGame = () => {
 
     const getNextQuestion = async () => {
         try {
-            const question = await fetch("/game/question?id=" + game?.questionNumber, {
+            const questionID = game.questionIdsByGame[game.questionNumber - 1]
+            const question = await fetch("/game/question?id=" + questionID, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -58,14 +57,36 @@ const PanelGame = () => {
 
             if (game.gameFinished) {
                 let winner
+                let text
                 if (user.groupA.points > user.groupB.points) {
-                    winner = "Grupo A"
+                    winner = user.groupA
+                    text = "Grupo A"
                 } else {
-                    winner = "Grupo B"
+                    winner = user.groupB
+                    text = "Grupo B"
                 }
+
+                const queryResult = await fetch("/game/result",{
+                    headers:{
+                        "Content-Type":"application/json"
+                    },
+                    method:"POST",
+                    body:JSON.stringify({
+                        category:game.category,
+                        total_points:winner.points,
+                        total_time:winner.time,
+                        groups:`Grupo A: ${user.groupA.user1} - ${user.groupA.user2} // Grupo B: ${user.groupB.user1} - ${user.groupB.user2}`,
+                        winner:`${winner.user1},${winner.user2}`
+                    })
+                })
+
+                const dataResult = await queryResult.json()
+
+                console.log(dataResult)
+
                 Swal.fire({
                     title: "El juego ha terminado",
-                    text: "El ganador es " + winner,
+                    text: "El ganador es " + text,
                     icon: "success"
                 }).then(() => {
                     dispatch(resetUserValues())
