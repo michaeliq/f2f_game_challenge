@@ -1,4 +1,6 @@
 import { openDB } from "@/db/services"
+import { questionsOjoSeco, questionsLubricantes } from "@/db/preguntas.vision"
+import { questionsVisualizacion } from "@/db/preguntas.surgical"
 
 export async function createTables() {
     console.log("aqui")
@@ -72,12 +74,12 @@ export async function createTables() {
 export async function initTables() {
     const db = await openDB()
 
-    await db.run(
+    /* await db.run(
         "INSERT INTO categories (name) values (?)",
         "General"
-    )
+    ) */
 
-    const questions = [
+    /* const questions = [
         ["La fuente de iluminación de LuxOR® Revalia es","LED","Halógena","Xenón","Ninguna de las anteriores"],
         ["¿Hasta cuántas veces es más grande el reflejo rojo con LuxOR® Revalia?","Hasta 6 veces más grande que otros microscopios","Hasta 3 veces más grande que otros microscopios","Hasta 8 veces más grande que otros microscopios","Hasta 10 veces más grande que otros microscopios"],
         ["Si quisiera mejorar el reflejo rojo, debería ajustar","La luz coaxial","La luz oblicua","La luz La luz ultravioleta","La luz fluorescente"],
@@ -101,19 +103,19 @@ export async function initTables() {
         ["El sistema de visualización 3D NGENUITY® se puede integrar con","CONSTELLATION® Vision System","CRUZE RS"," R15 V4 Ridder","KODIAK 450 · Cygnus"],
         ["¿Qué parámetro es posible ajustar digitalmente con el sistema de visualización 3D NGENUITY®?","La temperatura del color de la imagen","La cantidad de pixeles de la imagen","La durabilidad de la imagen","La vitalidad de la imagen"],
         ["La posibilidad de usar menos iluminación del microscopio y ver bien existe cuando se usa NGENUITY®","Es cierto","Es falso","Te quedas quedar ciego","Es imposible"]
-    ]
-    questions.forEach(async (gameQuestion) =>{
+    ] */
+    /* questionsLubricantes.forEach(async (gameQuestion) =>{
         await db.run(
             "INSERT INTO questions (question_body,answer,options,dificult,category) values (?,?,?,?,?)",
             gameQuestion[0],
             gameQuestion[1],
             gameQuestion.slice(1).join(),
             1,
-            1
+            3
         )
-    })
+    }) */
 
-    const users_init = [
+    /* const users_init = [
         ["Carlos Trejo",3124567788,"carlostrejo@gmail.com","Cali",1],
         ["Maria Bastidas",3251247788,"mariabastidas@gmail.com","Bogotá",1],
         ["Fabio Mosquera",3012578413,"fabiomosquera@gmail.com","Barranquilla",1],
@@ -137,7 +139,7 @@ export async function initTables() {
     await db.run(
         "INSERT INTO groups (users,category) values (?,?)",
         "3,4","1"
-    )
+    ) */
 
     await db.close()
     

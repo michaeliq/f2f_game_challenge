@@ -60,6 +60,7 @@ export const gameSlice = createSlice({
         },
         updateCategoryByGame: (state,action)=>{
             const category = action.payload
+            state.category = category
         },
         updateQuestionsByGame:(state,action)=>{
             state.questionIdsByGame = action.payload

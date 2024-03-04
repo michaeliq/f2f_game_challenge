@@ -8,9 +8,9 @@ export async function GET(res) {
     const category = searchParams.get('category')
     let question
     if (id) {
-        question = await db.get("SELECT * FROM questions WHERE id=? or category=?;", id)
+        question = await db.get("SELECT * FROM questions WHERE id=?", id)
     } else if(category) {
-        question = await db.all("SELECT * FROM questions WHERE category=?",category)
+        question = await db.all("SELECT * FROM questions WHERE category=? order by id desc",category)
     }else{
         question = await db.all("SELECT * FROM questions")
     }
