@@ -60,10 +60,61 @@ export  const questionsBiometria = [
     ["La integración de la guía de imágenes de ARGOS® desde la clínica al quirófano permite","Aumentar la precisión al minimizar errores de transcripción","Mejorar el uso de los lápices que nos regalan","Gastar más papel en imprimir los cálculos","Cambiar las impresoras constantemente"]
 ]
 
-export const questionsFluidica = [
-
+export const questionsLentesIntraoculares = [
+    ["¿Cuál es el beneficio de usar lentes asféricos?","Mejorar la calidad visual del paciente","Aumentar el nivel de independencia de las gafas","Mejorar la agudeza visual del paciente","Mejorar la visión de lectura"],
+    ["¿Cómo afectan las aberraciones corneales al desempeño de los LIOs?","Potencian el desempeño visual del lente","Afectan el desempeño visual del lente","No tienen injerencia sobre el desempeño del lente","No sé qué son las aberraciones"],
+    ["¿Cuál es el impacto de las aberraciones de bajo orden en un sistema óptico?","Impactan en el resultado refractivo","Afectan el desempeño de conos y bastones","Pueden alterar el procedimiento de YAG Láser","No tienen mayor importancia"],
+    ["¿Cómo afecta la calidad visual del paciente un LIO inclinado?","Se pierde calidad visual viéndose como un coma secundario","No se ve afectada","Se ve afectada sólo si el lente no está bien calculado","¿Se puede inclinar un LIO?"],
+    ["¿Cómo afecta la calidad visual del paciente un LIO descentrado?","Se pierde calidad visual viéndose como un coma horizontal","No se ve afectada","Se ve afectada sólo si el lente no está bien calculado","¿Se puede descentrar un LIO?"],
+    ["¿Qué inconvenientes puede presentar una óptica con reborde en un paciente?","Todas las anteriores","Puede generar disfotopsias positivas","Puede limitar el uso total de la óptica del lente","Puede ser más sensible al descentramiento"],
+    ["¿Qué relación existe entre el índice de refracción y el espesor de un lente intraocular?","A mayor índice de refracción más delgado es el lente","A mayor índice de refracción más grueso es el lente","A menor índice de refracción más delgado el lente","No hay relación entre ambas"],
+    ["¿Desde cuánto (o qué cantidad) es recomendado corregir el astigmatismo corneal?","Desde 0.5 D en adelante","No es necesario corregir el astigmatismo corneal","Desde 2.0 D y en adelante","Desde 1.5 D en adelante"],
+    ["¿Cuál es la fórmula ideal para calcular un lente tórico?","Barrett ya que considera el astigmatismo de cara posterior","Cualquier fórmula sirve para un lente tórico","SRK-T ya que es una fórmula muy confiable y actual","No coloco lentes tóricos"],
+    ["¿Cómo impacta el astigmatismo inducido en el cálculo del lente tórico?","Una estimación errónea podría alterar la cantidad de astigmatismo postoperatorio residual y afectar los resultados.","Una estimación errónea podría hacer que el paciente logre un error miópico significativo","Una estimación errónea podría hacer que el paciente logre un error hipermetrópico significativo","Una estimación errónea podría causar disturbios visuales significativos"," como destellos y halos"],
+    ["¿Cómo afecta la estabilidad en el saco capsular el desempeño visual del lente intraocular?","Un lente estable entrega confianza en el resultado refractivo","Si el lente se desplaza no cambia su poder y no afecta la visión del paciente","No afecta en nada","Los LIOs son todos igual de estables"],
+    ["¿Cuánto poder pierde un lente intraocular tórico al rotarse?","3.3%","2.2%","4.4%","5.5%"],
+    ["¿Está demostrado clínicamente el beneficio del filtro de luz azul?","Sí con estudios clínicos que demuestran mejor visión funcional","Aún no se ha publicado nada","Tal vez pero no me interesa","Posiblemente"],
+    ["¿Cómo afecta en el resultado visual el corregir completamente la aberración esférica de la córnea?","Entrega buena visión lejana pero se pierde profundidad de foco","Entrega buena visión lejana ganando profundidad de foco","No presenta ningún beneficio tangible","No"],
+    ["¿Hay alguna diferencia entre presentar la asfericidad en la cara anterior o posterior de un lente intraocular?","No","Si","Quizás","¿Qué relevancia tiene esto?"],
+    ["¿Qué beneficios tiene el dejar una leve aberración esférica positiva en el sistema óptico?","Puede aumentar la profundidad de foco logrando una visión intermedia funcional","Puede disminuir la profundidad de foco logrando una visión cercana","Puede disminuir la presencia de halos y destellos","No creo en la importancia de la aberración esférica"],
+    ["Los dispositivos de tinción capsular pueden ser incompatibles con:","Lentes de acrílico hidrofílico","Lentes de acrílico hidrofóbicos","Lentes de PMMA","Lentes multifocales"],
+    ["¿Cómo impacta la cantidad de luz usada por un lente difractivo en la calidad visual del paciente?","Mientras más luz utiliza mejor es la sensibilidad al contraste ","Mientras más luz utiliza mejor es el resultado refractivo","Mientras menos luz utiliza mejor es la sensibilidad al contraste","Mientras menos luz utiliza menor es la presencia de halos"],
+    ["¿Cuál es la distancia que internacionalmente se reconoce como “intermedia”?","66 cm","50 cm","75 cm","100 cm"],
+    ["La prevalencia de ACO (Opacificación Capsular Anterior) y PCO (Opacificación Capsular Posterior) en la óptica de un LIO puede derivar en:","Fimosis/Descentramiento/Visión borrosa","Glistenings","Agrietamiento y rotura de los hápticos","Rotura del saco capsular"],
+    ["Los beneficios de la estabilidad posoperatoria del lente podrían ser:","Todas las anteriores","Resultados refractivos más precisos","Rehabilitación visual más rápida","Menos inclinación o descentramiento del LIO"],
+    ["¿Por qué es importante que los cirujanos hagan las marcas de referencia mientras el paciente está sentado en posición vertical?","Para evitar errores debido a la ciclorrotación del ojo que ocurre cuando un paciente se recuesta","Para asegurarse de que el paciente no mueva la cabeza durante el proceso de marcado","Para evitar que las marcas de tinta se corran o se laven","Evaluar la cantidad de astigmatismo con la regla que tiene el paciente"],
+    ["Se considera que la principal desventaja de las incisiones relajantes limbares es:","Falta de precisión y confiabilidad","Rotación del eje","Ubicación incorrecta de la LRI","Ubicación superficial de la incisión dentro de la córnea"],
+    ["¿Cómo simplifica el LIO Vivity® la corrección de la presbicia? ","Todo lo anterior","Es más fácil establecer las expectativas del paciente ya que Vivity® no tiene los trade-off de un PCIOL tradicional debido a su perfil de disturbios visuales como un monofocal comparable con AcrySof®","Es más fácil satisfacer a los pacientes al ofrecer una visión a distancia con la calidad de un monofocal con una excelente visión intermedia y cercana funcional","Más fácil de integrar en la práctica de rutina lo que proporciona simplicidad en la preparación preoperatoria y el manejo del paciente postoperatorio"],
+    ["El/los beneficio(s) de la difracción es(son):","Un mayor rango de visión (mejor profundidad de campo y profundidad de foco) en comparación con un monofocal asférico","Sensibilidad al contraste mejorada en comparación con un monofocal asférico","Perfil de disturbios visuales igual que un monofocal asférico","No hay beneficios por la difracción"],
+    ["Los beneficios de la estabilidad posoperatoria del lente podrían ser:","Todos los anteriores","Resultados refractivos más precisos","Recuperación visual más rápida","Menor inclinación o descentramiento del LIO."],
+    ["Los pacientes con ojo seco a los que se implanta un lente multifocal:","Pueden experimentar dificultades visuales por tener una película lagrimal con superficie corneal irregular","Pueden presentar tasas de PCO superiores","Pueden necesitar llevar gafas de sol por la noche","Pueden necesitar gafas de lectura para la visión de lejos"],
+    ["¿Qué factores clínicos podrían afectar negativamente a los pacientes en los que se implanta un LIO multifocal?","Todas las anteriores","Edema macular cistoide (EMC)","Ojo seco","Astigmatismo residual"],
+    ["En la implantación de LIOs tóricos se considera que el astigmatismo irregular es:","Contraindicado","Óptimo","Ventajoso","Indeseado"]
 ]
 
-export const questionsLentesIntraoculares = [
-
+export const questionsFluidica = [
+    ["ACTIVE SENTRY® es:","Una pieza de mano","Una punta","Un cassette","Un inyector"],
+    ["Uno se los siguientes dispositivos tiene un sensor de presión incorporado: ","ACTIVE SENTRY®","INTREPID® Balanced Tip","AUTOSERT®","CENTURION® Ozil handpiece"],
+    ["Uno de los siguientes dispositivos permite realizar cirugías de catarata con un PIO más fisiológica:","ACTIVE SENTRY®","INTREPID® Balanced Tip","AUTOSERT®","CENTURION® Ozil handpiece"],
+    ["Uno de los siguientes dispositivos reduce el surge post oclusión:","ACTIVE SENTRY®","INTREPID® Balanced Tip","AUTOSERT®","CENTURION® Ozil handpiece"],
+    ["Uno de los siguientes dispositivos controla en tiempo real las fluctuaciones de la PIO:","ACTIVE SENTRY®","INTREPID® Balanced Tip","AUTOSERT®","CENTURION® Ozil handpiece"],
+    ["Al realizar cirugías de catarata con una PIO más fisiológica:","Todas las anteriores","Se disminuye el edema corneal","Hay reducción del aumento del espesor corneal central","Disminuyen los riesgos de pliegues en la membrana de Descement"],
+    ["Al realizar cirugías de catarata con una PIO más fisiológica:","Todas las anteriores","Hay un incremento en la claridad corneal los primeros días del post op.","Hay menor pérdida de células endoteliales","Favorece la comodidad del paciente"],
+    ["La punta de faco exclusiva para usuarios de la plataforma CENTURION® es:","INTREPID® Balanced Tip","Kelman Mini Flared","Kelman Tapered","Polymer Tip"],
+    ["La punta de faco que reduce la transferencia de calor al ojo es:","INTREPID® Balanced Tip","Kelman Mini Flared","Kelman Mini tip","Kelman Tapered"],
+    ["CENTURION® Vision System tiene bomba:","Peristáltica","Venturi","Dual: Venturi y peristáltica","Active Fluidics™"],
+    ["En una bomba peristáltica para aumentar la velocidad de atracción de los fragmentos se debe aumentar:","La aspiración","El vacío","La irrigación","El ultrasonido"],
+    ["Con CENTURION® Vision System con Active Fluidics® la irrigación se mide en:","mmHg","Porcentaje","Cc/min","CmH2O"],
+    ["En un equipo con fluídica por gravedad a medida que aumenta el flujo de aspiración la PIO:","Disminuye","Aumenta","Se mantienen constante","Ninguna de las anteriores"],
+    ["El efecto de sujeción de los fragmentos a la punta de faco es generado por:","El vacío","La irrigación","La aspiración","El ultrasonido"],
+    ["El ultrasonido longitudinal y el ultrasonido Ozil™ se parametrizan como porcentaje de:","Desplazamiento de la punta","Frecuencia","Cavitación","Ninguna de las anteriores"],
+    ["Usando equipos de faco de Alcon para una incisión de 2.75mm debería utilizar una manga de color:","Morado","Rosa","Verde","Azul"],
+    ["La máxima tasa de cortes que puede alcanzar la sonda de vitrectomía anterior del CENTURION® Vision System es:","5.000cpm","2.500cpm","3.000cpm","4.000cpm"],
+    ["Con CENTURION® Vision System para importar o descargar parámetros es necesario utilizar:","Una memoria USB","Una memora SD card","Conexión Bluetooth con el celular","No se pueden descargar parámetros con CENTURION® Vision System"],
+    ["La tasa de flujo de aspiración se mide en:","cc/min","mmHg","%","Ninguna de las anteriores"],
+    ["_______es la salida repentina de líquido de la cámara anterior del ojo después de que se rompe la oclusión. Como resultado el ojo puede colapsar.","Surge","Clogging","Oclusión","Venting"],
+    ["En el modo __________ cada activación de ultrasonido tiene la misma duración pero el intervalo entre cada activación disminuye a medida que se pisa el pedal.","Ráfaga (Burst)","Pulso","Continuo","Hiperpulso"],
+    ["Cuando la velocidad de flujo de aspiración ____________ el movimiento dentro de la cámara anterior se incrementa por lo que ____________ el material a la punta de faco.","Aumenta / atrae","Disminuye / repulsa","Aumenta / repulsa","Disminuye / atrae"],
+    ["La irrigación debe ser incrementada cuando:","El cirujano necesita profundizar la cámara anterior","La cámara anterior es muy profunda","Hay una RCP","El ojo es miope"],
+    ["En una bomba Venturi la tasa de flujo de aspiración es proporcional a:","El vacío","La altura de la botella","El porcentaje de ultrasonido","Ninguna de las anteriores"],
 ]
