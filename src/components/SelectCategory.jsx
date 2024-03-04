@@ -80,7 +80,7 @@ const SelectCategory = ({ setVisibility }) => {
         <div className="select-category-container">
             <ul className="category-list">
                 {categoryList?.map((categoryItem, key) => (
-                    <li onClick={() => setCategoryGame(categoryItem?.id)} className="category-item-container">
+                    <li key={key} onClick={() => setCategoryGame(categoryItem?.id)} className="category-item-container">
                         <p className="category-item-text">{categoryItem?.name}</p>
                     </li>
                 ))}
