@@ -30,8 +30,9 @@ export async function POST(req) {
     )
 
     const id = await db.get("select seq from sqlite_sequence where name='results'")
+    console.log(id)
     results = await db.get("select * from results where id = ?",id.seq)
-
+    console.log(results)
     if (!results) {
         return NextResponse.json({
             error: "No hay registro",
