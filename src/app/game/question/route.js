@@ -12,7 +12,7 @@ export async function GET(res) {
     } else if(category) {
         question = await db.all("SELECT * FROM questions WHERE category=? order by id desc",category)
     }else{
-        question = await db.all("SELECT * FROM questions")
+        question = await db.all("SELECT * FROM questions order by category desc")
     }
     if (!question) {
         return NextResponse.json({

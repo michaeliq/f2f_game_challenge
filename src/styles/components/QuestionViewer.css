@@ -1,0 +1,94 @@
+.question-viewer-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: #0008;
+    background-image: url("/images/modulo_panel.png");
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    z-index: 10000000;
+    overflow: auto;
+}
+
+.question-viewer-content {
+    width: 70vw;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+table.question-viewer-list {
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* width */
+.question-viewer-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.question-viewer-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+.question-viewer-content::-webkit-scrollbar-thumb {
+    background: rgb(3, 170, 230);
+    border-radius: 25%;
+    height: 15px;
+}
+
+/* Handle on hover */
+.question-viewer-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.question-viewer-item {
+    position: relative;
+
+}
+
+.question-viewer-cell {
+    text-align: left;
+    border: 1px solid #fff;
+}
+
+.question-viewer-container-btn{
+    background-image: url("/images/menu_opt_background.png");
+    background-size: 100% 100%;
+    width: 50vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    top: 12vh;
+    transition: .3s;
+}
+
+.question-viewer-container-btn:hover{
+    scale: .9;
+}
+
+button.question-view-btn-confirm{
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2vw;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: bolder;
+    width: 100%;
+}
+
+button.question-view-btn-confirm:hover{
+    color:#1b9edb;
+}

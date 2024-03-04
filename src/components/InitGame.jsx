@@ -7,11 +7,13 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { resetQuestion } from "@/redux/questionReducer"
 import { resetUserValues } from "@/redux/userReducer"
 import SelectCategory from "./SelectCategory"
+import QuestionViewer from "./QuestionViewer"
 
 const InitGame = () => {
     const [gameStart, setStateGame] = useState(false)
     const [jsConfetti, setInstanceCJ] = useState(null)
     const [categoriesVisible, setVisibilityCategories] = useState(false)
+    const [QuestionVisible, setVisibilityQuestions] = useState(false)
     const game = useAppSelector((state) => state.game)
     const dispatch = useAppDispatch()
 
@@ -54,6 +56,7 @@ const InitGame = () => {
                 {gameStart ?
                     <>
                         {categoriesVisible && <SelectCategory setVisibility={setVisibilityCategories} />}
+                        {QuestionVisible && <QuestionViewer visibility={QuestionVisible} setVisibility={setVisibilityQuestions} />}
                         <ul className="init-game-options">
                             <li onClick={() => showCategories()} className="init-game-option">
                                 Comenzar
@@ -61,7 +64,9 @@ const InitGame = () => {
                             <li className="init-game-option">Ver Ranking</li>
                             <li className="init-game-option">Ver Categorías</li>
                             <li className="init-game-option">Actualizar Base de Jugadores</li>
-                            <li className="init-game-option">Actualizar Base de Preguntas</li>
+                            <li onClick={() => setVisibilityQuestions(prev => !prev)} className="init-game-option">
+                                Base de Preguntas
+                            </li>
                             <li onClick={InitGameAction} className="init-game-option">Salir</li>
                         </ul>
                     </>
