@@ -12,7 +12,7 @@ const formatQuestion = (q) => {
     if(!q) return
     const count_words = q.split(" ")
     const count_chars = q.length
-    if (count_chars > 50) {
+    if (count_chars > 35) {
         let paragraph = ["",]
         for (let i = 0; i < count_words.length; i++) {
             const next_value = paragraph[paragraph.length - 1] + count_words[i] + " "
@@ -131,7 +131,7 @@ const ContainerOptionsGame = () => {
             {options.length > 0 && optionsGameItem.map((option, key) => (
                 <OptionGame verifyAnswer={verifyAnswer} text={options[key]} key={key} src={option.src} classN={option.classN} altText={option.altText}>
                     {formatQuestion(options[key]).map((text, key_p) => (
-                        <p key={key_p}>{text}</p>
+                        <p className="option-game-item" key={key_p}>{text}</p>
                     ))}
                 </OptionGame>
             ))}
