@@ -36,9 +36,6 @@ const SelectCategory = ({ setVisibility }) => {
 
     const selectCategoryByGame = async () => {
         if (categorySelected) {
-            const categoryText = categoryList.filter((element) => {
-                if(element?.id === categorySelected) return element.name
-            })
             try {
                 const categoryReq = await fetch("/game/question?category=" + categorySelected, {
                     method: "GET",
@@ -60,12 +57,11 @@ const SelectCategory = ({ setVisibility }) => {
                     }
                 }
                 dispatch(updateQuestionsByGame(questionIds))
-                dispatch(updateCategoryByGame(categoryText[0]))
             } catch (error) {
                 console.error(error)
                 dispatch(updateQuestionsByGame([]))
             }
-            dispatch(updateCategoryByGame(categoryText[0]))
+            dispatch(updateCategoryByGame(categorySelected))
             router.push("/game")
         } else {
             setVisibility(false)
