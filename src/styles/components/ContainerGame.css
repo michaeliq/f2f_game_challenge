@@ -1,7 +1,5 @@
 p {
-    background: -webkit-linear-gradient(#fff, #eee,#0f3565);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #fff;
 }
 .container-game{
     display: flex;
