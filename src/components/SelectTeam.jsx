@@ -26,11 +26,11 @@ const SelectTeam = () => {
                 <div className={"select_team_game_container "}>
                     <div onClick={() => handleSelectTeam("A")} className="module-team-a">
                         <img src={"/images/menu_opt_background.png"} className="select_team_game image" alt="equipo a" />
-                        <p className="team-a">A</p>
+                        <p className="team-a">Equipo A</p>
                     </div>
                     <div onClick={() => handleSelectTeam("B")} className="module-team-b">
                         <img src={"/images/menu_opt_background.png"} className="select_team_game image" alt="equipo b" />
-                        <p className="team-b">B</p>
+                        <p className="team-b">Equipo B</p>
                     </div>
                 </div>
             }

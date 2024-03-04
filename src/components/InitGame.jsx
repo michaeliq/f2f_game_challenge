@@ -67,7 +67,7 @@ const InitGame = () => {
                     </>
                     : <ul className="init-game-option-start">
                         <li onClick={InitGameAction} className="init-game-start-btn">
-                            INICIAR JUEGO
+                            INICIAR COMBATE
                         </li>
                     </ul>
                 }
