@@ -33,3 +33,26 @@ export async function GET(res) {
     await db.close()
     return NextResponse.json(users)
 }
+
+export async function POST(res) {
+    const db = await openDB()
+    const data = await res.json()
+    const { fullname, category, gener1, gener2, partner, city, email, movil } = data
+
+    let user
+    await db.run("INSERT into users (fullname, category, gener1, gener2, partner, city, email, movil) values (?,?,?,?,?,?,?,?)",
+        fullname, category, gener1, gener2, partner, city, email, movil
+    )
+
+    const id = await db.get("select seq from sqlite_sequence where name='users'")
+    user = await db.get("select * from users where id = ?", id.seq)
+    if (!user) {
+        return NextResponse.json({
+            error: "No hay registro",
+            status: false
+        })
+    }
+    await db.close()
+
+    return NextResponse.json(user)
+}

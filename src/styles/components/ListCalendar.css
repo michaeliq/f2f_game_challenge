@@ -1,0 +1,100 @@
+.list-category-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 70px;
+}
+
+.list-category.button-display{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2rem;
+}
+
+.list-category-select-container{
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 2rem;
+    align-items: center;
+    width: 100%;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.list-category.text-button{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.list-category.img-button{
+    font-size: 2rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.list-category-select-reset{
+    font-size: 2rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.list-category-dialog{
+    display: none;
+}
+
+.list-category-dialog.visible{
+    display: flex;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    
+}
+
+.list-category-dialog-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(36, 36, 100, 0.701);
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.list-category-dialog-box p{
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.list-category.table{
+    display: none;
+}
+
+.list-category.table.visible{
+    display: table;
+    position: absolute;
+    top:70px;
+    left: 0;
+    width: 100%;
+    min-height: 20vh;
+    background-color:  rgba(36, 36, 100, 0.701);
+}
+
+.list-category.table.visible thead{
+    background-color:  rgba(36, 36, 100, 1);
+}
+
+.list-category.table.visible tr{
+    background-color:  rgba(36, 36, 100, 0.7);
+    font-size: 1.8rem;
+}
+
+.list-category.table.visible th:last-child{
+    margin: 2rem;
+    cursor: pointer;
+}

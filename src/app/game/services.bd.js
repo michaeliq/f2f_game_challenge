@@ -1,4 +1,5 @@
 import { openDB } from "@/db/services"
+import calendar from "@/data/f2f_.categories.json"
 import { questionsOjoSeco, questionsLubricantes } from "@/db/preguntas.vision"
 import { questionsBiometria, questionsFluidica, questionsLentesIntraoculares, questionsVisualizacion } from "@/db/preguntas.surgical"
 
@@ -74,7 +75,7 @@ export async function createTables() {
     hour TEXT,
     date TEXT,
     category TEXT,
-    available BOOLEAN
+    available BOOLEAN,
     team TEXT
         );
     `)
@@ -90,7 +91,18 @@ export async function initTables() {
         "General"
     ) */
 
-    questionsFluidica.forEach(async (gameQuestion) =>{
+    /* calendar.forEach(async (element) => {
+        await db.run(
+            "INSERT INTO calendar (hour,date,category,available,team) values (?,?,?,?,?)",
+            element.hour,
+            element.date,
+            element.name,
+            element.available,
+            element.team.join()
+        )
+    }) */
+
+    /* questionsFluidica.forEach(async (gameQuestion) =>{
         await db.run(
             "INSERT INTO questions (question_body,answer,options,dificult,category) values (?,?,?,?,?)",
             gameQuestion[0],
@@ -110,7 +122,7 @@ export async function initTables() {
             1,
             6
         )
-    })
+    }) */
 
     /* const users_init = [
         ["Carlos Trejo",3124567788,"carlostrejo@gmail.com","Cali",1],
