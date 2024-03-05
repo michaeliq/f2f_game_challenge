@@ -54,10 +54,12 @@ export async function POST(res) {
     const db = await openDB()
     const data = await res.json()
     const { fullname, category, gener1, gener2, partner, city, email, movil } = data
+    const user1 = fullname?.trim()
+    const user2 = partner?.trim()
 
     let user
     await db.run("INSERT into users (fullname, category, gener1, gener2, partner, city, email, movil) values (?,?,?,?,?,?,?,?)",
-        fullname, category, gener1, gener2, partner, city, email, movil
+    user1, category, gener1, gener2, user2, city, email, movil
     )
 
     const id = await db.get("select seq from sqlite_sequence where name='users'")

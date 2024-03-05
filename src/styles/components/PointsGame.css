@@ -35,3 +35,19 @@
     font-size: 2.5rem;
 }
 
+.text-points{
+    color:#fff;
+    font-size: 2rem;
+    font-weight: bolder;
+    position: absolute;
+}
+
+.text-points.a{
+    left: 32vw;
+    top:7vh
+}
+.text-points.b{
+    right: 32vw;
+    top:7vh
+}
+

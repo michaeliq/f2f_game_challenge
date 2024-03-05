@@ -5,9 +5,12 @@ const { useState, useEffect } = require("react")
 import "@/styles/components/CelebrateTeam.css"
 
 const CelebrateTeam = ({winner}) =>{
+    
     const user = useAppSelector(state => state.user)
     const [gener1,setGener1] = useState("")
     const [gener2,setGener2] = useState("")
+
+    console.log(winner === "A")
 
     const getTeamData = async () => {
         let query
@@ -18,7 +21,7 @@ const CelebrateTeam = ({winner}) =>{
                 },
                 method:"GET"
             })
-        }else{
+        }else if(winner === "B"){
             query = await fetch(`/game/user?fullname=${user.groupB.user1}&partner=${user.groupB.user2}`,{
                 headers:{
                     "Content-Type":"application/json"
