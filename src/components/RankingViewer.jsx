@@ -52,7 +52,7 @@ const RankingViewer = ({visibility,setVisibility}) => {
                                 Tiempo (Seg)
                             </th>
                             <th className="ranking-viewer-cell">
-                                Categoria
+                                Módulo
                             </th>
                         </tr>
                     </thead>

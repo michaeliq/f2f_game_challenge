@@ -9,6 +9,8 @@ import { resetUserValues } from "@/redux/userReducer"
 import SelectCategory from "./SelectCategory"
 import QuestionViewer from "./QuestionViewer"
 import RankingViewer from "./RankingViewer"
+import CategoryViewer from "./CategoryViewer"
+import UserViewer from "./UserViewer"
 
 const InitGame = () => {
     const [gameStart, setStateGame] = useState(false)
@@ -16,6 +18,7 @@ const InitGame = () => {
     const [categoriesVisible, setVisibilityCategories] = useState(false)
     const [QuestionVisible, setVisibilityQuestions] = useState(false)
     const [RankingVisible, setRankingVisibility] = useState(false)
+    const [UserListVisible, setUserListVisibility] = useState(false)
     const game = useAppSelector((state) => state.game)
     const dispatch = useAppDispatch()
 
@@ -60,15 +63,20 @@ const InitGame = () => {
                         {categoriesVisible && <SelectCategory setVisibility={setVisibilityCategories} />}
                         {QuestionVisible && <QuestionViewer visibility={QuestionVisible} setVisibility={setVisibilityQuestions} />}
                         {RankingVisible && <RankingViewer visibility={RankingVisible} setVisibility={setRankingVisibility} />}
+                        {UserListVisible && <UserViewer visibility={UserListVisible} setVisibility={setUserListVisibility} />}
                         <ul className="init-game-options">
                             <li onClick={() => showCategories()} className="init-game-option">
                                 Comenzar
                             </li>
                             <li onClick={() => setRankingVisibility(prev => !prev)} className="init-game-option">
                                 Ver Ranking
-                                </li>
-                            <li className="init-game-option">Ver Categorías</li>
-                            <li className="init-game-option">Actualizar Base de Jugadores</li>
+                            </li>
+                            <li onClick={() => setCategoryVisibility(prev => !prev)} className="init-game-option">
+                                Inscribir Jugadores
+                            </li>
+                            <li onClick={() => { setUserListVisibility(prev => !prev) }} className="init-game-option">
+                                Base de Jugadores
+                            </li>
                             <li onClick={() => setVisibilityQuestions(prev => !prev)} className="init-game-option">
                                 Base de Preguntas
                             </li>

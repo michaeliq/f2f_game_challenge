@@ -12,6 +12,7 @@ export async function createTables() {
     const table_questions = await db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='questions';")
     const table_questions_game = await db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='questions_game';")
     const table_categories = await db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='categories';")
+    const table_calendar = await db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='calendar';")
 
     !table_results && await db.exec(`
     CREATE TABLE results (
@@ -65,6 +66,16 @@ export async function createTables() {
     question INTEGER,
     winner_group INTEGER,
     left_time INTEGER
+        );
+    `)
+    !table_calendar && await db.exec(`
+    CREATE TABLE calendar (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hour TEXT,
+    date TEXT,
+    category TEXT,
+    available BOOLEAN
+    team TEXT
         );
     `)
 

@@ -52,7 +52,7 @@ const QuestionViewer = ({ setVisibility, visibility }) => {
                                 Opciones
                             </th>
                             <th className="question-viewer-cell">
-                                Categoria
+                                Módulo
                             </th>
                         </tr>
                     </thead>
