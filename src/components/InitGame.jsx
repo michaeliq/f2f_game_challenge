@@ -8,12 +8,14 @@ import { resetQuestion } from "@/redux/questionReducer"
 import { resetUserValues } from "@/redux/userReducer"
 import SelectCategory from "./SelectCategory"
 import QuestionViewer from "./QuestionViewer"
+import RankingViewer from "./RankingViewer"
 
 const InitGame = () => {
     const [gameStart, setStateGame] = useState(false)
     const [jsConfetti, setInstanceCJ] = useState(null)
     const [categoriesVisible, setVisibilityCategories] = useState(false)
     const [QuestionVisible, setVisibilityQuestions] = useState(false)
+    const [RankingVisible, setRankingVisibility] = useState(false)
     const game = useAppSelector((state) => state.game)
     const dispatch = useAppDispatch()
 
@@ -57,11 +59,14 @@ const InitGame = () => {
                     <>
                         {categoriesVisible && <SelectCategory setVisibility={setVisibilityCategories} />}
                         {QuestionVisible && <QuestionViewer visibility={QuestionVisible} setVisibility={setVisibilityQuestions} />}
+                        {RankingVisible && <RankingViewer visibility={RankingVisible} setVisibility={setRankingVisibility} />}
                         <ul className="init-game-options">
                             <li onClick={() => showCategories()} className="init-game-option">
                                 Comenzar
                             </li>
-                            <li className="init-game-option">Ver Ranking</li>
+                            <li onClick={() => setRankingVisibility(prev => !prev)} className="init-game-option">
+                                Ver Ranking
+                                </li>
                             <li className="init-game-option">Ver Categorías</li>
                             <li className="init-game-option">Actualizar Base de Jugadores</li>
                             <li onClick={() => setVisibilityQuestions(prev => !prev)} className="init-game-option">

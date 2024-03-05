@@ -5,7 +5,7 @@ export async function GET(req) {
     const db = await openDB()
     const { searchParams } = new URL(req.url)
     let results
-    results = await db.all("SELECT * FROM results")
+    results = await db.all("SELECT * FROM results order by total_points desc, total_time")
     if (!results) {
         return NextResponse.json({
             error: "No hay resultados aún registrados",
