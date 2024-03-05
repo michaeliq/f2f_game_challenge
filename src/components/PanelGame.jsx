@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { changeDataQuestion, resetQuestion } from "@/redux/questionReducer"
 import Swal from "sweetalert2"
 import { resetUserValues } from "@/redux/userReducer"
-import { resetValues } from "@/redux/gameReducer"
+import { resetValues, updateWinner } from "@/redux/gameReducer"
 
 const formatQuestion = (q) => {
     if(!q) return
@@ -61,9 +61,11 @@ const PanelGame = () => {
                 if (user.groupA.points > user.groupB.points) {
                     winner = user.groupA
                     text = "Grupo A"
+                    dispatch(updateWinner("A"))
                 } else {
                     winner = user.groupB
                     text = "Grupo B"
+                    dispatch(updateWinner("B"))
                 }
 
                 const queryResult = await fetch("/game/result",{
@@ -72,7 +74,7 @@ const PanelGame = () => {
                     },
                     method:"POST",
                     body:JSON.stringify({
-                        category:game.category,
+                        category:game.category?.id,
                         total_points:winner.points,
                         total_time:winner.time,
                         groups:`Grupo A: ${user.groupA.user1} - ${user.groupA.user2} // Grupo B: ${user.groupB.user1} - ${user.groupB.user2}`,
@@ -82,12 +84,13 @@ const PanelGame = () => {
 
                 const dataResult = await queryResult.json()
 
-                console.log(dataResult)
-
                 Swal.fire({
                     title: "El juego ha terminado",
                     text: "El ganador es " + text,
-                    icon: "success"
+                    icon: "success",
+                    customClass: {
+                        container:"custom-container"
+                      },
                 }).then(() => {
                     dispatch(resetUserValues())
                     dispatch(resetQuestion())
@@ -126,6 +129,7 @@ const PanelGame = () => {
 
     return (
         <div className="panel-game">
+            
             <img src={"/images/modulo_panel.png"} className="module-panel" alt="Imagen del Panel" />
             {questionBody?.map((textItem, key) => (
                 <p key={key}>{textItem}</p>

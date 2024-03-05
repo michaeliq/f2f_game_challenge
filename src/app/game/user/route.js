@@ -11,6 +11,8 @@ export async function GET(res) {
     const db = await openDB()
     const { searchParams } = new URL(res.url)
     const category = searchParams.get('category')
+    const fullname = searchParams.get('fullname')
+    const partner = searchParams.get('partner')
     const group = searchParams.get('group')
     let query = "SELECT * FROM users"
 
@@ -26,6 +28,20 @@ export async function GET(res) {
             query += ` WHERE group="${group}"`
         } else {
             query += ` AND group="${group}"`
+        }
+    }
+    if (fullname) {
+        if (verifyQuery(query)) {
+            query += ` WHERE fullname="${fullname}"`
+        } else {
+            query += ` AND fullname="${fullname}"`
+        }
+    }
+    if (partner) {
+        if (verifyQuery(query)) {
+            query += ` WHERE partner="${partner}"`
+        } else {
+            query += ` AND partner="${partner}"`
         }
     }
     let users

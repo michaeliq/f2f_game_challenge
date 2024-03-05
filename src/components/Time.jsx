@@ -35,14 +35,14 @@ const Time = () => {
 
     useEffect(() => {
         let intervalI
-        if (!gamePaused) {
+        if (!gamePaused && !game.gameFinished) {
             intervalI = setInterval(() => {
                 setTime(time - 1)
                 dispatch(updateTime({time}))
             }, 1000);
             setStatusInterval(intervalI)
         }
-        if (time <= 0) {
+        if (time <= 0 && !game.gameFinished) {
             clearInterval(intervalI)
             if(game.countTurn === 2){
                 dispatch(updateTurn())

@@ -38,10 +38,10 @@ const UserViewer = ({visibility,setVisibility}) => {
                                 Módulo
                             </th>
                             <th className="user-viewer-cell">
-                                Fecha
+                                Correo
                             </th>
                             <th className="user-viewer-cell">
-                                Hora
+                                Movil
                             </th>
                         </tr>
                     </thead>
@@ -55,10 +55,10 @@ const UserViewer = ({visibility,setVisibility}) => {
                                     {user.category}
                                 </th>
                                 <th className="user-viewer-cell">
-                                    {user.date}
+                                    {user.email}
                                 </th>
                                 <th className="user-viewer-cell">
-                                    {user.hour}
+                                    {user.movil}
                                 </th>
                             </tr>
                         ))}

@@ -63,9 +63,9 @@ const ContainerCompatitorGame = () => {
 
     }
 
-    useEffect(() => {
+    /* useEffect(() => {
         getUser()
-    }, [])
+    }, []) */
     return (
         <div className="container-compatitor-game">
             <CompatitorGame axisX={"right"} axisY={"Top"} altText={"Competidor 1 equipo A"}>

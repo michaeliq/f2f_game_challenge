@@ -25,7 +25,7 @@ const ListCalendar = ({ setCategory, categorySelected }) => {
     const generateItemList = () => {
         const itemList = categoryList.filter(item => {
             let value = ""
-            if (item.available !== false && item.category === categorySelectedByList) {
+            if (item.available  && item.category === categorySelectedByList) {
                 value = item
             }
             return value

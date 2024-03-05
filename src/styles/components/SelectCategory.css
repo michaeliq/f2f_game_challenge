@@ -44,11 +44,11 @@
     background-image: url("/images/modulo_panel.png");
     background-size: 100% 100%;
     background-position: center;
-    width: 600px;
-    height: 400px;
+    width: 800px;
+    height: 600px;
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 1.8rem;
 }
 

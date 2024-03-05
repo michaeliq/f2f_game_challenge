@@ -4,7 +4,7 @@ import { openDB } from "@/db/services";
 const verifyQuery = (query) => {
     const sliceQueryVerification = query.split(" ")
     const countSlice = sliceQueryVerification.length
-    if (sliceQueryVerification[countSlice - 1] === "users") return true
+    if (sliceQueryVerification[countSlice - 1] === "calendar") return true
     return false
 }
 
