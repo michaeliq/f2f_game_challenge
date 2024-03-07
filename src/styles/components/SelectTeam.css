@@ -5,7 +5,6 @@
     top: 0;
     left: 0;
     z-index: 10000;
-    background-color: #0008;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,16 +13,18 @@
 
 .module-team-a{
     align-self: self-start;
-    position: relative;
-    left: -20vw;
+    position: absolute;
+    left: -30vw;
+    top: 30vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 .module-team-b{
     align-self: self-end;
-    position: relative;
-    right: -20vw;
+    position: absolute;
+    right: -30vw;
+    top: 30vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -36,14 +37,14 @@
 .module-team-a p.team-a{
     position: absolute;
     color: #fff ;
-    right: 20vw;
+    right: 10vw;
     font-size: 5rem;
 }
 
 .module-team-b p.team-b{
     position: absolute;
     color: #fff ;
-    left: 20vw;
+    left: 10vw;
     font-size: 5rem;
 }
 
