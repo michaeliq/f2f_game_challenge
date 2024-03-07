@@ -1,18 +1,19 @@
 export const questionsOjoSeco = [
     ["Padecimiento en el cual una persona no produce suficientes lágrimas de calidad para nutrir y lubricar al ojo","Enfermedad de Ojo Seco","Síndrome de Ojo Seco","Enfermedad de la película lagrimal","Daño en el Ojo Seco"],
-    ["Cuáles son las 2 fases de la película lagrimal según la definición del DEWS II","Capa lipídica y mucino-acuosa","Capa lipídica y capa de mucina","Capara lipídica y capa acuosa","Capsula lipidia y capsula acuosa"],
-    ["Menciona cuál de los siguientes es un síntoma de la enfermedad de Ojo Seco","A y C son correctas","Ojo rojo","Uso de antidepresivos","Sensación de arenilla"],
+    ["Cuáles son las 2 fases de la película lagrimal según la definición del DEWS II","Capa lipídica y mucino-acuosa","Capa lipídica y capa de mucina","Capara lipídica y capa acuosa","Ninguna de las anteriores"],
+    ["Menciona cuál de los siguientes es un síntoma de la enfermedad de Ojo Seco","Ojo rojo y sensación de arenilla","Ojo rojo","Uso de antidepresivos","Sensación de arenilla"],
     ["Menciona cuál de los siguientes NO es un factor de riesgo para la enfermedad de Ojo Seco","Ardor","Edad","Condiciones médicas como diabetes","Enfermedades como diabetes"],
     ["Selecciona una función de la película lagrimal","Todas son correctas","Lleva oxígeno y nutrientes para la córnea","Mejora la visión","Humedece la superficie ocular"],
     ["Nombre de la estructura en las células normales que permiten que la fase mucino-acuosa permanezca protegiendo al ojo","Glicocálix","Epitelio","Descemet","Endotelio"],
     ["Número estimado de personas que padecen de Ojo Seco en el mundo","1400 Millones","140 Millones","14 Millones","140 Mil"],
     ["Menciona 2 de los principales factores de riesgo que pueden provocar Ojo Seco","Edad y Género","Edad","Cambio de clima","Género"],
-    ["Molécula presente en todos los productos de la Familia Systane capaz de unirse a las zonas de la superficie ocular dañadas por el Ojo Seco, que permite que los pacientes experimenten un alivio rápido de larga duración","HP-Guar","HP-Guard","Polietilenglicol ","DropTainer"],
+    ["Molécula presente en todos los productos de la Familia Systane capaz de unirse a las zonas de la superficie ocular dañadas por el Ojo Seco que permite que los pacientes experimenten un alivio rápido de larga duración","HP-Guar","HP-Guard","Polietilenglicol ","DropTainer"],
     ["Es uno de los cuestionarios que se pueden utilizar para saber si un paciente padece la enfermedad de Ojo Seco","DEQ5","OSDY","AOS","CDC"],
-    ["Selecciona cuál de los siguientes enunciados es correcto","El ojo seco es un problema común y con frecuencia crónico, particularmente en adultos mayores","El ojo seco es un problema común y con frecuencia crónico, particularmente en niños","El ojo seco es un problema poco común y con frecuencia crónico, particularmente en adultos mayores","El ojo seco es un problema poco común y nunca crónico, particularmente en mujeres adultas"],
+    ["Selecciona cuál de los siguientes enunciados es correcto","El ojo seco es un problema común y con frecuencia crónico particularmente en adultos mayores","El ojo seco es un problema común y con frecuencia crónico particularmente en niños","El ojo seco es un problema poco común y con frecuencia crónico particularmente en adultos mayores","El ojo seco es un problema poco común y nunca crónico particularmente en mujeres adultas"],
+    ['Selecciona si la siguiente afirmación es cierta o falsa: "Las Glándulas de Meibomio que forman la capa de lípidos de la Película Lagrimal, actúan como una barrera retrasando la evaporación de la capa acuosa"',"Cierto","Falso","Posiblemente falso","Tal vez sea cierto"]
     ["Porcentaje de los pacientes con ojo seco que tienen signos clínicos de DGM","86%","56%","96%","78%"],
     ["Las Glándulas de Meibomio que forman la capa de lípidos de la Película Lagrimal, actúan como una barrera, retrasando la evaporación de la capa acuosa","La afirmación es cierta","La afirmación es falsa","Actúan como barrera, pero no retrasa la evaporación","Son otras glándulas las encargadas de estos procesos"],
-    ["¿Cuál es el objetivo del manejo de la enfermedad de Ojo Seco?","A y C son correctas","Aliviar el malestar ocular","Quitar el enrojecimiento de los ojos","Lograr la homeostasis de la película lagrimal"],
+    ["¿Cuál es el objetivo del manejo de la enfermedad de Ojo Seco?","Aliviar el malestar ocular y lograr la homeostasis de la película lagrimal","Aliviar el malestar ocular","Quitar el enrojecimiento de los ojos","Lograr la homeostasis de la película lagrimal"],
     ["¿Cuál de los siguientes NO forma parte del diagnóstico de la enfermedad de Ojo Seco?","Cultivos","Preguntas de triaje","Análisis de factores de riesgo","Pruebas de clasificación de subtipos"],
     ["Forma parte de la primera línea de tratamiento de los pacientes con Enfermedad de Ojo Seco","Lubricantes oculares","Secretagogos orales","Tapones lagrimales","Abordaje quirúrgico"],
     ["En la tinción con fluoresceína el tiempo de rompimiento de la Película Lagrimal nos indica","Calidad de la película lagrimal","Cantidad de la película lagrimal","Severidad de los síntomas del paciente","Todas las anteriores"],
@@ -24,10 +25,12 @@ export const questionsOjoSeco = [
     ["¿El HP-Guar es un agente gelificante derivado de la planta Guar ¿Con qué está creado este componente?","Goma Guar Modificada","Hialuronato y Goma Guar","Borato","Sorbitol y goma Guar"],
     ["Cuál de las siguientes NO es una ventaja del HP-Guar","Reduce la lubricación","Mimetiza la capa de mucina","Protege y regenera la superficie ocular","Reduce la inflamación"],
     ["Grupo poblacional más afectado por la Enfermedad de Ojo Seco","Mujeres","Niños","Personas caucásicas","Hombres"],
+    ["La enfermedad de Ojo Seco puede aparecer a cualquier edad y atentar contra el desempeño y calidad de vida de quien la padece","Cierto","Falso","Sola las personas mayores la padecen","Solo personas jovenes la padecen"],
     ["La exposición visual a las pantallas por más de cinco horas diarias ha provocado el aumento en pacientes que demandan consulta en el servicio de oftalmología con síntomas como","Todas son correctas","Visión borrosa","Dolor de ojos y cabeza asociados al esfuerzo ocular","Ojo seco"],
-    ["Hormonas principales u hormona principal, cuyos niveles fluctuantes pueden afectar las glándulas sebáceas de los ojos, llevando al resecamiento","Estrógeno y Progesterona","Progesterona","Estrogeno","Lutropina"],
+    ["Hormonas principales u hormona principal cuyos niveles fluctuantes pueden afectar las glándulas sebáceas de los ojos llevando al resecamiento","Estrógeno y Progesterona","Progesterona","Estrógeno","Lutropina"],
+    [" Centrarse en una tarea por largo Lempo sin parpadear o acLvidades como mirar la computadora o conducir o leer por horas puede provocar sensación de resequedad ocular","Cierto","Falso","Posiblemente cierto","Depende de la actividad"],
     ["Pruebas de detección necesarias en el diagnóstico de la enfermedad de Ojo Seco","Todas son correctas","Medir el volumen de las lágrimas (Prueba de Schirmer o Prueba del Hilo de Fenol)","Determinarse la calidad de las lágrimas midiendo la composición de partículas y agua","Utilización de marcadores para detectar la enfermedad en las lágrimas recolectadas"],
-    ["Condición caracterizada por la alteración en el contenido (cantidad y/o calidad) y o pobre distribución lipídica en la película lagrimal que provoca la evaporación de la lágrima","DGM","Sjögren","DMAE","MGDSa"]
+    ["Condición caracterizada por la alteración en el contenido (cantidad y/o calidad) y o pobre distribución lipídica en la película lagrimal que provoca la evaporación de la lágrima","DGM","La cantidad no es importante","DMAE","Sjögren"]
 ]
 
 export const questionsLubricantes = [
@@ -39,10 +42,14 @@ export const questionsLubricantes = [
     ["Matríz protectora que proporciona un mayor tiempo de retención de la lagrima en la superficie ocular, así como una protección prolongada","HP Guar + Borato","HA + PEG","Borato + Sorbitol","HP Guar + Sorbitol"],
     ["Integrante de la familia systane recomendado en el manejo de la enfermedad de ojo seco por deficiencia musino acuosa","Systane HA y Systane Ultra","Solo Systane Balance","Solo Systane HA","Solo Systane Ultra"],
     ["Es el nombre del gotero patentado por Alcon, que ayuda a instilar sólo una gota en caso de la Familia Systane","Droptainer","HP GUAR","Drop GUAR","Drop Line"],
+    [" El uso de Systane Ultra está indicado en pacientes con enfermedad de la supertcie ocular no asociada a deficiencia de glándulas de Meibomio es decir en aquellos cuadros de ojo seco acudeficiente o bien ojo seco leve a moderado","Cierto","Posiblemente cierto","Falso","No sé"],
+    ["Systane HA no está recomendado para su uso sobre lentes de contacto","Cierto","Posiblemente cierto","Falso","Los lentes de contacto se lubrican solos"],
+    ["Systane Complete Hidrata lubrica y estabiliza la superficie ocular","Cierto","Falso","Posiblemente cierto","Totalmente falso"],
     ["Horas de alivio sostenido que provee la formulación de Systane Complete","8 hrs de alivio","4 hrs de alivio","12 hrs de alivio","6 hrs de alivio"],
-    ["Son ingredientes activos en el frasco de la formulación de Systane HA","Hialuronato de sodio, polietilenglicol y propilenglicol","Hialuronato de sodio, HP Guar y Borato","HP Guar y borato","Ninguna de las anterioreS"],
+    ["En la formulación de Systane Complete, el complejo lipídico nanométrico migra a la fase muscino acuosa de la película lagrimal para estabilizarla y reponerla","Cierto","Falso","Totalmente cierto","Totalmente falso"],
+    ["Son ingredientes activos en el frasco de la formulación de Systane HA","Hialuronato de sodio + polietilenglicol + propilenglicol","Hialuronato de sodio + HP Guar + Borato","HP Guar y borato","Ninguna de las anterioreS"],
     ["¿Cuáles son las ventajas del HP-uar en Systane?","Todas las respuestas son correctas","Mimetiza la capa de mucina","Protege y regenera la superficie ocular","Reduce la inflamación"],
     ["Selecciona qué ventajas tiene el alivio prolongado de 8 horas de Systane Complete en el tratamiento de los pacientes con Ojo Seco","Todas las opciones son correctas","Permite que el tratamiento dure más tiempo","Actúa sobre todas las capas de la película lagrimal","Son menos instilaciones"],
-    ["Producto de la familia Systane que mejora la cicatrización corneal, ideal para el uso en pacientes en el post operatorio","Systane HA","Systane Gel","Systane Complete","Systane Ultra"],
-    ["Es conocido como un “Imán de humedad” natural que ayuda a los lubricantes a proporcionar hidratación más duradera, permaneciendo más tiempo en la superficie ocular gracias al HP-Guar","HA","Carboximetilcelulosa","Glicerina","Sorbitol"]
+    ["Producto de la familia Systane que mejora la cicatrización corneal ideal para el uso en pacientes en el post operatorio","Systane HA","Systane Gel","Systane Complete","Systane Ultra"],
+    ["Es conocido como un “Imán de humedad” natural que ayuda a los lubricantes a proporcionar hidratación más duradera permaneciendo más tiempo en la superficie ocular gracias al HP-Guar","HA","Carboximetilcelulosa","Glicerina","Sorbitol"]
 ]

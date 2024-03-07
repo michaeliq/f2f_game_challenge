@@ -102,7 +102,7 @@ export async function initTables() {
         )
     }) */
 
-    /* questionsFluidica.forEach(async (gameQuestion) =>{
+    questionsFluidica.forEach(async (gameQuestion) =>{
         await db.run(
             "INSERT INTO questions (question_body,answer,options,dificult,category) values (?,?,?,?,?)",
             gameQuestion[0],
@@ -110,6 +110,26 @@ export async function initTables() {
             gameQuestion.slice(1).join(),
             1,
             4
+        )
+    })
+    questionsVisualizacion.forEach(async (gameQuestion) =>{
+        await db.run(
+            "INSERT INTO questions (question_body,answer,options,dificult,category) values (?,?,?,?,?)",
+            gameQuestion[0],
+            gameQuestion[1],
+            gameQuestion.slice(1).join(),
+            1,
+            1
+        )
+    })
+    questionsLubricantes.forEach(async (gameQuestion) =>{
+        await db.run(
+            "INSERT INTO questions (question_body,answer,options,dificult,category) values (?,?,?,?,?)",
+            gameQuestion[0],
+            gameQuestion[1],
+            gameQuestion.slice(1).join(),
+            1,
+            3
         )
     })
 
@@ -122,7 +142,27 @@ export async function initTables() {
             1,
             6
         )
-    }) */
+    })
+    questionsBiometria.forEach(async (gameQuestion) =>{
+        await db.run(
+            "INSERT INTO questions (question_body,answer,options,dificult,category) values (?,?,?,?,?)",
+            gameQuestion[0],
+            gameQuestion[1],
+            gameQuestion.slice(1).join(),
+            1,
+            5
+        )
+    })
+    questionsOjoSeco.forEach(async (gameQuestion) =>{
+        await db.run(
+            "INSERT INTO questions (question_body,answer,options,dificult,category) values (?,?,?,?,?)",
+            gameQuestion[0],
+            gameQuestion[1],
+            gameQuestion.slice(1).join(),
+            1,
+            2
+        )
+    })
 
     /* const users_init = [
         ["Carlos Trejo",3124567788,"carlostrejo@gmail.com","Cali",1],
