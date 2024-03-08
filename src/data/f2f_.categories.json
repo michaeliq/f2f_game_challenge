@@ -1,227 +1,84 @@
 [{
-  "name": "Ojo Seco",
-  "hour": "10:00",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Ojo Seco",
-  "hour": "11:15",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Ojo Seco",
-  "hour": "15:15",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Ojo Seco",
-  "hour": "16:00",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Ojo Seco",
-  "hour": "10:45",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Ojo Seco",
-  "hour": "15:15",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lubricantes",
-  "hour": "10:45",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lubricantes",
-  "hour": "14:30",
-  "date": "07/03",
-  "available": false,
-  "team": [
-    "josue castillo,Luis Damasco",
-    "martin falcon,MArta"
-  ]
-},
-{
-  "name": "Lubricantes",
-  "hour": "10:00",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lubricantes",
-  "hour": "11:00",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lubricantes",
-  "hour": "14:30",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lubricantes",
-  "hour": "16:00",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
   "name": "Fluídica",
+  "hour": "10:30",
+  "date": "09/03",
+  "available": true
+},
+{
+  "name": "Lentes Intraoculares",
   "hour": "09:30",
-  "date": "07/03",
-  "available": true,
-  "team": []
+  "date": "09/03",
+  "available": true
 },
 {
-  "name": "Fluídica",
+  "name": "Lentes Intraoculares",
   "hour": "11:00",
-  "date": "07/03",
-  "available": true,
-  "team": []
+  "date": "09/03",
+  "available": true
+},
+{
+  "name": "Ojo Seco",
+  "hour": "15:15",
+  "date": "09/03",
+  "available": true
+},
+{
+  "name": "Lubricantes",
+  "hour": "10:00",
+  "date": "09/03",
+  "available": true
+},
+{
+  "name": "Lubricantes",
+  "hour": "11:00",
+  "date": "09/03",
+  "available": true
+},
+{
+  "name": "Lubricantes",
+  "hour": "14:30",
+  "date": "09/03",
+  "available": true
+},
+{
+  "name": "Ojo Seco",
+  "hour": "10:45",
+  "date": "09/03",
+  "available": true
 },
 {
   "name": "Fluídica",
   "hour": "15:30",
-  "date": "07/03",
-  "available": true,
-  "team": []
+  "date": "09/03",
+  "available": true
 },
 {
-  "name": "Fluídica",
+  "name": "Lentes Intraoculares",
   "hour": "16:15",
-  "date": "07/03",
-  "available": true,
-  "team": []
+  "date": "09/03",
+  "available": true
 },
 {
-  "name": "Fluídica",
-  "hour": "10:30",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Fluídica",
-  "hour": "15:30",
-  "date": "08/03",
-  "available": true,
-  "team": []
+  "name": "Lubricantes",
+  "hour": "16:00",
+  "date": "09/03",
+  "available": true
 },
 {
   "name": "Visualización",
   "hour": "09:45",
-  "date": "07/03",
-  "available": true,
-  "team": []
+  "date": "09/03",
+  "available": true
 },
 {
   "name": "Visualización",
   "hour": "15:45",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Visualización",
-  "hour": "09:45",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Visualización",
-  "hour": "15:45",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Biometría",
-  "hour": "10:15",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Biometría",
-  "hour": "15:00",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Biometría",
-  "hour": "10:15",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Biometría",
-  "hour": "15:00",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lentes Intraoculares",
-  "hour": "10:30",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lentes Intraoculares",
-  "hour": "14:45",
-  "date": "07/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lentes Intraoculares",
-  "hour": "09:30",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lentes Intraoculares",
-  "hour": "11:00",
-  "date": "08/03",
-  "available": true,
-  "team": []
+  "date": "09/03",
+  "available": true
 },
 {
   "name": "Lentes Intraoculares",
   "hour": "04:45",
-  "date": "08/03",
-  "available": true,
-  "team": []
-},
-{
-  "name": "Lentes Intraoculares",
-  "hour": "16:15",
-  "date": "08/03",
-  "available": true,
-  "team": []
+  "date": "09/03",
+  "available": true
 }]

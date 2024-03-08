@@ -101,8 +101,17 @@ export async function initTables() {
             element.team.join()
         )
     }) */
-
-    questionsFluidica.forEach(async (gameQuestion) =>{
+    calendar.forEach(async (gameQuestion) =>{
+        await db.run(
+            "INSERT INTO calendar (hour,date,category,available,team) values (?,?,?,?,?)",
+            gameQuestion.hour,
+            gameQuestion.date,
+            gameQuestion.name,
+            1,
+            ""
+        )
+    })
+    /* questionsFluidica.forEach(async (gameQuestion) =>{
         await db.run(
             "INSERT INTO questions (question_body,answer,options,dificult,category) values (?,?,?,?,?)",
             gameQuestion[0],
@@ -162,7 +171,7 @@ export async function initTables() {
             1,
             2
         )
-    })
+    }) */
 
     /* const users_init = [
         ["Carlos Trejo",3124567788,"carlostrejo@gmail.com","Cali",1],
