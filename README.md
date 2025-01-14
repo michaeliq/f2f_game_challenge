@@ -1,4 +1,4 @@
-# HAT Aegncia
+# HAT Agencia
 ### Juego didactico de Preguntas en área de oftalmología
 
 #### Resumen
