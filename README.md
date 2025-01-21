@@ -21,6 +21,6 @@ El juego didactico de preguntas es una divertida manera de pasar el tiempo con a
     - GIT (https://github.com/git-for-windows/git/releases/download/v2.47.1.windows.1/Git-2.47.1-64-bit.exe)
     - SQLITEBROWSER (https://download.sqlitebrowser.org/DB.Browser.for.SQLite-v3.13.1-win64.msi)
 2. Ejecutar el comando ```git clone https://github.com/michaeliq/f2f_game_challenge.git```.
-3. Ejecutar el comando ```npm i```.
+3. Ejecutar el comando ```npm i && npm run build```.
 4. Ejecutar el comando ```npm start```.
 5. Abrir el navegador http://localhost:4511
