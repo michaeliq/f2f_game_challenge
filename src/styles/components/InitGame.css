@@ -16,8 +16,15 @@
 .init-game-logo{
     position: absolute;
     margin: 0 auto;
-    scale: .7;
-    top:-15vh;
+    scale: .19;
+}
+
+.subtitle-game-logo{
+    position: absolute;
+    margin: 0 auto;
+    scale: 1.05;
+    top: 72vh;
+    right: 30vw;
 }
 
 .init-game-container-buttons{

@@ -58,7 +58,8 @@ const InitGame = () => {
 
     return (
         <div className="init-game">
-            <img src="/images/game_background_init.png" alt="Logo de juego" className="init-game-logo" />
+            <img src="/images/f2f_challenge_logo.png" alt="Logo de juego" className="init-game-logo" />
+            <img src="/images/surgical-colombia.png" alt="Logo de juego" className="subtitle-game-logo" />
             <div className="init-game-container-buttons">
                 {gameStart ?
                     <>

@@ -37,7 +37,7 @@ export const gameSlice = createSlice({
             state.questionNumber += 1
         },
         updateRound: (state) => {
-            if (state.questionNumber > 9) {
+            if (state.questionNumber > 4) {
                 state.gameFinished = true
             }
             state.countTurn = 1
