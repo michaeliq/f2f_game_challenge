@@ -37,7 +37,7 @@ export const gameSlice = createSlice({
             state.questionNumber += 1
         },
         updateRound: (state) => {
-            if (state.questionNumber > 4) {
+            if (state.questionNumber > 5) {
                 state.gameFinished = true
             }
             state.countTurn = 1
@@ -50,7 +50,6 @@ export const gameSlice = createSlice({
         },
         selectTeam: (state, action) => {
             state.turn = action.payload
-            state.paused = false
         },
         updateTurn: (state) => {
             if (state.turn === "A") {

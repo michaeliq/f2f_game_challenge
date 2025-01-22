@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     background-position: center;
     padding: 3rem;
+    position: relative;
 }
 
 .create-user-form{
@@ -65,11 +66,13 @@
 }
 
 .create-user-container-btn{
-    width: 100%;
-    margin: 2rem  auto;
+    position: absolute;
+    width: 90%;
     display: flex;
+    margin: 0 auto;
     justify-content: space-around;
     align-items: center;
+    bottom: 15%;
 }
 
 .create-user-container-btn button, .create-user-btn-confirm{

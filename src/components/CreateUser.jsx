@@ -98,7 +98,7 @@ const CreateUser = ({ visibility, setVisibility }) => {
                     <div className="create-user-container-input">
                         <label htmlFor="" className="create-user-label">Nombre y Apellido</label>
                         <input type="text" className="create-user-input" onChange={handleChange} value={userData?.fullname} name="fullname" />
-                        <div className="form-gener-box">
+                        {/* <div className="form-gener-box">
                             <label htmlFor="gener1">
                                 Género
                             </label>
@@ -111,9 +111,9 @@ const CreateUser = ({ visibility, setVisibility }) => {
                                 <input type="radio" id="mujer1" onChange={handleChange} name="gener1" value="mujer" />
                                 <label for="mujer1">F</label>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
-                    <div className="create-user-container-input">
+                    {/* <div className="create-user-container-input">
                         <label htmlFor="" className="create-user-label">Celular</label>
                         <input type="number" className="create-user-input" onChange={handleChange} value={userData?.movil} name="movil" />
                     </div>
@@ -124,8 +124,8 @@ const CreateUser = ({ visibility, setVisibility }) => {
                     <div className="create-user-container-input">
                         <label htmlFor="" className="create-user-label">Ciudad</label>
                         <input type="text" className="create-user-input" onChange={handleChange} value={userData?.city} name="city" />
-                    </div>
-                    <div className="create-user-container-input">
+                    </div> */}
+                    {/* <div className="create-user-container-input">
                         <label htmlFor="" className="create-user-label">Compeñaro/a de combate</label>
                         <input type="text" className="create-user-input" onChange={handleChange} value={userData?.partner} name="partner" />
                         <div className="form-gener-box">
@@ -142,7 +142,7 @@ const CreateUser = ({ visibility, setVisibility }) => {
                                 <label for="mujer2">F</label>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <ListCalendar categorySelected={userData?.category} setCategory={setCategoryForm} />
                     <div className="create-user-container-btn">
                         <input onClick={handleSubmit} type="submit" className="create-user-btn-confirm" value="Inscribir Participantes" />

@@ -7,12 +7,10 @@ const QuestionViewer = ({ setVisibility, visibility }) => {
     const [questionList, setQuestionList] = useState([])
 
     const categories = [
-        "Visualización",
-        "Ojo Seco",
-        "Lubricantes",
-        "Fluídica",
-        "Biometría",
-        "Lentes Intraoculares"
+        "Biometria y LIOs Nivel 1",
+        "Equipos Nivel 1",
+        "Biometria y LIOs Nivel 2",
+        "Equipos Nivel 2",
     ]
 
     const getAllQuestion = async () => {

@@ -88,6 +88,7 @@ const PanelGame = () => {
                     title: "El juego ha terminado",
                     text: "El ganador es " + text,
                     icon: "success",
+                    backdrop:false,
                     customClass: {
                         container:"custom-container"
                       },
@@ -107,7 +108,7 @@ const PanelGame = () => {
             dispatch(changeDataQuestion({
                 answer: raw.answer,
                 questionBody: raw.question_body,
-                options: raw.options.split(",").sort()
+                options: raw.options.split(";").sort()
             }))
 
             setRoundGame(game.round)

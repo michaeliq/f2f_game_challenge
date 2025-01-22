@@ -7,10 +7,10 @@ const RankingViewer = ({visibility,setVisibility}) => {
     const [rankingList,setRankingList] = useState([])
 
     const categories = [
-        "Biometria Nivel 1",
-        "Lentes Intraoculares Nivel 1",
-        "Biometria Nivel 2",
-        "Lentes Intraoculares Nivel 2",
+        "Biometria y LIOs Nivel 1",
+        "Equipos Nivel 1",
+        "Biometria y LIOs Nivel 2",
+        "Equipos Nivel 2",
     ]
 
     const getRanking = async () => {

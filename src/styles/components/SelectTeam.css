@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     z-index: 10000;
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -15,19 +15,21 @@
     align-self: self-start;
     position: absolute;
     left: -30vw;
-    top: 30vh;
+    top: 35vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    scale: 0.8;
 }
 .module-team-b{
     align-self: self-end;
     position: absolute;
     right: -30vw;
-    top: 30vh;
+    top: 35vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    scale: 0.8;
 }
 
 .select_team_game.image{
@@ -49,5 +51,5 @@
 }
 
 .module-team-a:hover, .module-team-b:hover{
-    scale: 1.12;
+    scale: 1;
 }

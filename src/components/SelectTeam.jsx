@@ -12,7 +12,8 @@ const SelectTeam = () => {
 
     const handleSelectTeam = (team) => {
         dispatch(selectTeam(team))
-        setTeam(true)
+        dispatch(changePausedStateGame({paused:false}))
+        setTeam(true) 
     }
 
     useEffect(() => {

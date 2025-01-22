@@ -38,6 +38,6 @@
 }
 
 .custom-container{
-  z-index: 100000000000000;
-  background-color: transparent;
+  z-index: 100000000000000 !important;
+  background-color: red !important;
 }
