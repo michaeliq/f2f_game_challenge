@@ -68,7 +68,7 @@ const SelectCategory = ({ setVisibility }) => {
                 let questionIds = []
                 let team = []
 
-                while (questionIds.length < 9) {
+                while (questionIds.length < 4) {
                     const indexList = getRandomInt(data?.length)
                     const indexQuestion = data[indexList]?.id
                     if (questionIds.length > 0 && questionIds.find((element) => element === indexQuestion)) {
