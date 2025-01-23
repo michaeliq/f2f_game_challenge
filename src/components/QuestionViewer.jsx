@@ -11,6 +11,7 @@ const QuestionViewer = ({ setVisibility, visibility }) => {
         "Equipos Nivel 1",
         "Biometria y LIOs Nivel 2",
         "Equipos Nivel 2",
+        "Equipos Nivel 3",
     ]
 
     const getAllQuestion = async () => {
